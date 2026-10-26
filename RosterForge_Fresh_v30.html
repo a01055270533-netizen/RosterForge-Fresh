@@ -1,0 +1,1019 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Roster Forge Fresh v28</title><style>:root{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;color:#20232a;background:#f1f0f7}*{box-sizing:border-box}body{margin:0}header{padding:22px 18px 12px;position:sticky;top:0;background:#f1f0f7;z-index:2}h1{font-size:27px;margin:8px 0}h2{font-size:21px;margin:0 0 14px}small,.muted{color:#858793;font-size:12px}main{padding:10px 16px 110px;max-width:650px;margin:auto}.card{background:white;border-radius:18px;padding:17px;margin:10px 0;box-shadow:0 1px 1px #00000006}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.row>div{min-width:0}.pill{background:#e9f9f6;color:#078d85;border-radius:99px;padding:5px 9px;font-size:12px}button{font:inherit;border:0;border-radius:13px;background:#e8f8f5;color:#008e83;padding:11px 14px;font-weight:600;cursor:pointer}button.primary{background:#0ba99b;color:white}button.danger{background:#fff0f0;color:#c54b52}button:disabled{opacity:.45}input,select{font:inherit;border:0;background:#f5f5f9;border-radius:12px;padding:13px;width:100%;color:#25252a}label{display:block;font-size:12px;color:#71727e;margin:13px 0 5px}.fab{position:fixed;bottom:88px;right:18px;border-radius:50%;font-size:27px;width:55px;height:55px;box-shadow:0 4px 16px #009d9170}.nav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:#fff;padding:11px 6px calc(11px + env(safe-area-inset-bottom));border-top:1px solid #eee}.nav button{background:none;color:#777;font-size:12px;padding:7px}.nav .active{color:#009c90}.sheet{position:fixed;inset:0;background:#0006;z-index:5;display:flex;align-items:end}.sheet>section{background:#f5f4fa;border-radius:23px 23px 0 0;width:100%;max-height:85vh;overflow:auto;padding:20px 16px 32px}.hidden{display:none}.statgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}.stat{background:#f1f2f6;border-radius:9px;text-align:center;padding:8px 2px;font-size:12px}.stat b{display:block;font-size:16px;margin-top:5px}.weapon{font-size:12px;overflow:auto}.weapon table{border-collapse:collapse;min-width:100%;width:100%}.weapon th,.weapon td{padding:8px 5px;border-bottom:1px solid #eee;text-align:left}.progress{height:5px;border-radius:8px;background:#ddd;overflow:hidden;margin-top:10px}.progress div{height:100%;background:#05ac9b}.warning{background:#fff2e7;color:#8e541a;padding:12px;border-radius:12px;font-size:12px;margin:10px 0}.sub{font-size:13px;line-height:1.55;color:#565b65}.item{padding:13px 0;border-bottom:1px solid #eee}.item:last-child{border:0}.details{margin-top:10px;padding:10px;background:#f6f7fa;border-radius:10px}.count{display:flex;align-items:center;gap:10px}.count button{padding:7px 11px}.empty{text-align:center;padding:55px 20px;color:#888}details summary{cursor:pointer;font-weight:600;padding:8px 0}details p{line-height:1.65;font-size:13px;color:#555}
+:root{color:#152b43;background:#f3f6fa}header{background:#183653;color:white;padding:17px 18px 12px}header small{color:#c4d8e7}h1{font-size:24px}.card{border:1px solid #e2e8ef;border-radius:13px;box-shadow:none}.pill{background:#e7eff8;color:#1b568b}button{background:#e8f0f8;color:#19588e;border-radius:10px}button.primary{background:#1468c6;color:#fff}.nav .active{color:#1468c6}.fab{background:#1468c6;box-shadow:0 4px 15px #1468c655}.statgrid{grid-template-columns:repeat(7,1fr)}.stat{font-size:10px}.stat b{font-size:13px}.sheet>section{background:#f3f6fa;max-height:91vh}.weapontable{overflow-x:auto}.weapontable table{border-collapse:collapse;width:100%;font-size:12px;min-width:340px}.weapontable th{background:#e9eef5}.weapontable th,.weapontable td{padding:9px 5px;border:1px solid #d8e0e9;text-align:center}.weapontable td:first-child{text-align:left;font-weight:650}.modelbox{border:1px solid #dde4ee;background:#fff;padding:12px;border-radius:12px;margin:9px 0}.modelbox summary{display:flex;justify-content:space-between}.chip{display:inline-block;background:#edf3fb;color:#235b92;padding:4px 7px;border-radius:8px;font-size:11px;margin:3px}.tabs{display:flex;gap:5px;overflow:auto;margin:12px 0}.tabs button{white-space:nowrap;padding:9px}.tabs .on{background:#1468c6;color:#fff}.subhead{font-weight:700;margin:15px 0 8px}.badgecost{font-size:12px;background:#e9f0fa;padding:5px 7px;border-radius:8px}.muted{line-height:1.5}.warning{line-height:1.5}button:focus-visible,select:focus-visible{outline:2px solid #1468c6}
+.fixedgear{background:#eaf0f7;border:1px solid #d2dfed;border-radius:10px;padding:12px;color:#344a60}.fixedgear small{margin-left:6px}.loadout-label{flex:1;text-align:center;font-size:12px;font-weight:700;color:#225c91;background:#e8f1fc;border-radius:8px;padding:8px 4px}</style><style>.tag-help{margin-top:10px;background:#f2f7ff;border:1px solid #d4e2fb;border-radius:10px;padding:10px 12px}.tag-help summary{cursor:pointer;font-weight:700;color:#234b88}.tag-help-list{padding-top:7px}.tag-help-list>div{padding:8px 0;border-bottom:1px solid #dce6f5;display:flex;flex-direction:column;gap:3px}.tag-help-list>div:last-child{border-bottom:0}.tag-help-list b{color:#234b88;font-size:13px}.tag-help-list span{font-size:12px;line-height:1.5}</style></head><body><header><div class="row"><small>ROSTER FORGE · 새 출발</small><span class="pill">개인 테스트</span></div><h1 id="title">내 로스터</h1></header><main id="main"></main><button id="fab" class="primary fab hidden" onclick="showAdd()">+</button><nav class="nav"><button id="nav-home" onclick="page='home';render()">▤<br>내 로스터</button><button id="nav-list" onclick="page='list';render()">▥<br>편성</button><button id="nav-info" onclick="page='rules';render()">▤<br>규칙</button></nav><div id="overlay" class="sheet hidden" onclick="if(event.target===this)closeSheet()"><section id="sheetContent"></section></div><script>
+'use strict';
+// The starter catalogue is illustrative, NOT a copy of New Recruit and NOT a verified 11e catalogue.
+const catalog={gk:[{id:'term',ko:'브라더후드 터미네이터 스쿼드',en:'Brotherhood Terminator Squad',category:'전투 유닛',sizes:[5,10],points:{5:185,10:380},roles:['Justicar','Terminator','Ancient','Apothecary'],weapons:['Storm bolter','싸이케논','인시너레이터','사일렌서'],stats:{M:'5"',T:6,Sv:'2+',W:3,Ld:'6+',OC:2,Inv:'4+'},abilities:[{name:'Deep Strike',short:'Reserves에서 등장할 수 있는 배치 규칙',detail:'Reserves에 배치하고 Reinforcements Step에 Deep Strike의 거리 및 배치 제한에 따라 등장합니다.'},{name:'Force Edge (Psychic)',short:'Monster·Vehicle이 아닌 적에게 Melee 공격 시 AP가 1 좋아짐',detail:'이 유닛의 모델이 Monster 또는 Vehicle이 아닌 유닛을 대상으로 Melee 공격할 때 해당 공격의 AP를 1 개선합니다.'},{name:'Ancient’s Banner',short:'분대 모델들의 OC +1',detail:'Ancient’s Banner를 가진 모델이 속한 유닛의 모델은 OC가 1 증가합니다.'},{name:'Apothecary’s Narthecium',short:'Command phase에 파괴된 모델 1기 복귀',detail:'Command phase에 장비 소유자가 생존해 있으면 해당 유닛에서 파괴된 모델 1기를 복귀시킬 수 있습니다. Character는 제외합니다.'}]},{id:'strike',ko:'스트라이크 스쿼드',en:'Strike Squad',category:'전투 유닛',sizes:[5,10],points:{5:125,10:250},roles:['Justicar','Grey Knight'],weapons:['Storm bolter','싸이케논','인시너레이터','사일렌서'],stats:{M:'6"',T:5,Sv:'2+',W:2,Ld:'6+',OC:2},abilities:[{name:'Deep Strike',short:'Reserves를 통해 전장에 등장',detail:'Deep Strike에 따른 배치 제한을 지켜 Reinforcements Step에 등장할 수 있습니다.'},{name:'Scouts 6"',short:'게임 시작 전 6인치 Scouts 이동',detail:'Scouts 이동은 Core Rules의 순서와 거리 제한에 따릅니다.'},{name:'Sanctifying Ritual (Psychic)',short:'장악한 Objective를 계속 유지하는 능력',detail:'Command phase 종료 시 장악 중인 Objective 범위에 있으면, 상대의 Level of Control이 자신의 수치를 초과할 때까지 그 Objective를 계속 장악합니다.'}]},{id:'pal',ko:'팔라딘 스쿼드',en:'Paladin Squad',category:'전투 유닛',sizes:[5,10],points:null,roles:['Paragon','Paladin','Ancient'],weapons:['Storm bolter','싸이케논','인시너레이터','사일렌서'],stats:null,abilities:[]},{id:'dread',ko:'네메시스 드레드나이트',en:'Nemesis Dreadknight',category:'차량',sizes:[1],points:null,roles:['Dreadknight'],weapons:['헤비 싸이케논','헤비 인시너레이터'],stats:null,abilities:[]} ,{id:'purifier',ko:'퓨리파이어 스쿼드',en:'Purifier Squad',category:'Infantry',sizes:[5,10],points:null,roles:['Knight of the Flame','Purifier'],weapons:['Storm bolter','인시너레이터','싸이케논','사일렌서'],stats:null,abilities:[]},{id:'interceptor',ko:'인터셉터 스쿼드',en:'Interceptor Squad',category:'Infantry',sizes:[5,10],points:null,roles:['Justicar','Interceptor'],weapons:['Storm bolter','인시너레이터','싸이케논','사일렌서'],stats:null,abilities:[]},{id:'purgation',ko:'퍼게이션 스쿼드',en:'Purgation Squad',category:'Infantry',sizes:[5,10],points:null,roles:['Justicar','Purgator'],weapons:['Storm bolter','인시너레이터','싸이케논','사일렌서'],stats:null,abilities:[]},{id:'librarian',ko:'브라더후드 라이브러리안',en:'Brotherhood Librarian',category:'Character',sizes:[1],points:null,roles:['Librarian'],weapons:['Storm bolter'],stats:null,abilities:[]},{id:'crowe',ko:'카스텔란 크로우',en:'Castellan Crowe',category:'Epic Hero',sizes:[1],points:null,roles:['Castellan Crowe'],weapons:['Purifying Flame'],stats:null,abilities:[]},{id:'gmdread',ko:'그랜드 마스터 인 네메시스 드레드나이트',en:'Grand Master in Nemesis Dreadknight',category:'Character',sizes:[1],points:null,roles:['Grand Master'],weapons:['헤비 싸이케논','헤비 인시너레이터'],stats:null,abilities:[]},{id:'champ',ko:'브라더후드 챔피언',en:'Brotherhood Champion',category:'Character',sizes:[1],points:null,roles:['Champion'],weapons:['Storm bolter'],stats:null,abilities:[]}],dg:[{id:'pm',ko:'플레이그 마린',en:'Plague Marines',category:'전투 유닛',sizes:[5,10],points:null,roles:['Plague Champion','Plague Marine'],weapons:['볼트건','블라이트 런처','플레이그 스퓨어'],stats:null,abilities:[]},{id:'ds',ko:'데스슈라우드 터미네이터',en:'Deathshroud Terminators',category:'전투 유닛',sizes:[3,6],points:null,roles:['Deathshroud Champion','Deathshroud Terminator'],weapons:['플레이그스퍼트 건틀릿'],stats:null,abilities:[]},{id:'drone',ko:'포티드 블로트 드론',en:'Foetid Bloat-drone',category:'차량',sizes:[1],points:null,roles:['Bloat-drone'],weapons:['플레이그 스퓨어','플레시모어'],stats:null,abilities:[]}]};
+const STORAGE='rosterforge_fresh_final_2';let rosters=[];try{rosters=JSON.parse(localStorage.getItem(STORAGE)||localStorage.getItem('rosterforge_fresh_final_1')||localStorage.getItem('rosterforge_fresh_5')||localStorage.getItem('rosterforge_fresh_4')||localStorage.getItem('rosterforge_fresh_3')||localStorage.getItem('rosterforge_fresh_2')||'[]')}catch(e){}let active=0,page='home',selectedUnit=null;const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function unitCost(r,u){let d=lookup(r,u.id);if(!d||!d.points||d.points[u.size]==null)return null;return d.points[u.size]}function totalCost(r){let costs=r.units.map(u=>unitCost(r,u));return costs.every(v=>v!==null)?costs.reduce((a,b)=>a+b,0):null}function validateUnit(u){if(u.id!=='term'&&u.id!=='strike')return '';normalizeUnit(u);let special=u.models.filter(m=>m.ranged!=='Storm bolter');if(u.id==='strike'){let count=special.length;return count>Math.floor(u.size/5)?'특수무장 수량 초과: 5 models당 1기까지 가능':''}let ordinary=special.filter(m=>m.role==='Terminator').length;let ancient=u.models.filter(m=>m.role==='Ancient');let ap=u.models.filter(m=>m.role==='Apothecary');let just=u.models.filter(m=>m.role==='Justicar');if(just.length!==1)return 'Justicar는 1기여야 합니다';if(ancient.length>1||ap.length>1)return 'Ancient / Apothecary는 각각 최대 1기';if(ap.some(m=>m.ranged!=='Storm bolter'))return 'Apothecary는 Narthecium 장착 모델로 특수무장을 함께 선택할 수 없습니다';if(ordinary>Math.floor(u.size/5))return '일반 Terminator 특수무장 수량 초과';return ''} function save(){try{localStorage.setItem(STORAGE,JSON.stringify(rosters))}catch(e){alert('저장에 실패했습니다. 백업 기능을 이용하세요.')}}function current(){return rosters[active]}function lookup(r,id){return (catalog[r.faction]||[]).find(x=>x.id===id)}function closeSheet(){$('overlay').classList.add('hidden')}function openSheet(html){$('sheetContent').innerHTML=html;$('overlay').classList.remove('hidden')}function makeRoster(){openSheet(`<div class="row"><h2>로스터 만들기</h2><button onclick="closeSheet()">취소</button></div><label>로스터 이름</label><input id="newName" placeholder="예: 첫 번째 로스터" value="테스트"><label>Faction</label><select id="newFaction"><option value="gk">그레이 나이트</option></select><label>Points 한도</label><select id="newLimit"><option>500</option><option>1000</option><option>1500</option><option selected>2000</option><option>3000</option></select><p class="sub">이번 버전은 화면과 편성 흐름을 확인하는 기초 버전입니다.</p><button class="primary" style="width:100%" onclick="createRoster()">만들기</button>`)}function createRoster(){const r={name:$('newName').value.trim()||'새 로스터',faction:$('newFaction').value,limit:+$('newLimit').value,units:[]};rosters.push(r);active=rosters.length-1;save();closeSheet();page='list';render()}function showAdd(){let r=current();if(!r)return;openSheet(`<div class="row"><h2>유닛 추가</h2><button onclick="closeSheet()">완료</button></div><input id="search" placeholder="유닛 이름 검색" oninput="filterUnits()"><div id="unitResults">${unitRows('')}</div>`)}function unitRows(q){let r=current();return catalog[r.faction].filter(x=>(x.ko+' '+x.en).toLowerCase().includes(q.toLowerCase())).map(x=>`<div class="item row"><div><b>${esc(x.ko)}</b><div class="muted">${esc(x.en)} · ${esc(x.category)} · ${x.points?x.points[x.sizes[0]]+' pts':'Points 검증 대기'}</div></div><button onclick="addUnit('${x.id}')">추가</button></div>`).join('')||'<p class="empty">검색 결과가 없습니다.</p>'}function filterUnits(){$('unitResults').innerHTML=unitRows($('search').value)}function addUnit(id){let r=current(),d=lookup(r,id);r.units.push({id,size:d.sizes[0],models:Array.from({length:d.sizes[0]},(_,i)=>({role:d.roles[i===0?0:Math.min(1,d.roles.length-1)],weapon:d.weapons[0]}))});save();closeSheet();render()}function removeUnit(i){if(!confirm('유닛을 삭제할까요?'))return;current().units.splice(i,1);save();render()}// Model loadouts are represented as separate ranged and melee slots.
+const BASE_MELEE='Nemesis force weapon';
+function weaponEnglish(w){return WNAME[w]||w}
+function isMelee(w){return (weapons[weaponEnglish(w)]||{}).kind==='m'}
+function fixedLoadout(id,role){
+ if(role==='Apothecary')return {ranged:'Storm bolter',melee:BASE_MELEE,lockedR:true,lockedM:true,note:'Apothecary: Narthecium은 고정 Wargear이며 변경할 수 없습니다.'};
+ if(role==='Ancient')return {ranged:'Storm bolter',melee:BASE_MELEE,lockedR:false,lockedM:true,note:'Ancient’s Banner는 고정 Wargear입니다.'};
+ if(id==='crowe')return {ranged:'Purifying flame',melee:BASE_MELEE,lockedR:true,lockedM:true,note:'Epic Hero의 기본 무장은 이 테스트에서 변경할 수 없습니다.'};
+ if(id==='librarian')return {ranged:'Storm bolter',melee:BASE_MELEE,lockedR:true,lockedM:true,note:'Vortex of Doom은 별도 고정 Psychic 공격으로 표시됩니다.'};
+ return {ranged:null,melee:BASE_MELEE,lockedR:false,lockedM:true,note:'Nemesis force weapon은 이 유닛의 고정 Melee 무장입니다.'};
+}
+function normalizeModel(u,m){
+ const f=fixedLoadout(u.id,m.role);
+ if(m.ranged===undefined)m.ranged=m.weapon&&!isMelee(m.weapon)?weaponEnglish(m.weapon):'Storm bolter';
+ if(m.melee===undefined)m.melee=m.weapon&&isMelee(m.weapon)?weaponEnglish(m.weapon):BASE_MELEE;
+ if(f.ranged)m.ranged=f.ranged;
+ if(f.melee)m.melee=f.melee;
+ m.weapon=m.ranged; // older backups still have the legacy weapon field
+ return m;
+}
+function normalizeUnit(u){(u.models||[]).forEach(m=>normalizeModel(u,m));return u}
+function allowedRanged(u,d,m){
+ const f=fixedLoadout(u.id,m.role);
+ if(f.lockedR)return [f.ranged];
+ let available=d.weapons.map(weaponEnglish).filter(w=>!isMelee(w));
+ if(!available.length)available=['Storm bolter'];
+ return [...new Set(available)];
+}
+function editUnit(i){selectedUnit=i;let r=current(),u=normalizeUnit(r.units[i]),d=lookup(r,u.id);openSheet(`<div class="row"><h2>${esc(d.ko)}</h2><button onclick="closeSheet()">완료</button></div><div class="muted">${esc(d.en)}</div><label>분대 규모</label><select onchange="resizeUnit(${i},this.value)">${d.sizes.map(s=>`<option ${s===u.size?'selected':''} value="${s}">${s} models</option>`).join('')}</select><div class="warning">고정 Wargear는 잠금 표시되며 직군 변경 시 필수 무장을 자동 적용합니다. 검증되지 않은 무장 제한은 공식 자료와 대조해야 합니다.</div><div id="modelWarning" class="warning">${esc(validateUnit(u)||'편성 기본 검사 완료')}</div><div id="models">${modelRows(i)}</div><button onclick="closeSheet();datasheet(${i})" style="width:100%;margin-top:8px">선택한 무기 Stats 보기</button><button class="danger" style="width:100%;margin-top:15px" onclick="closeSheet();removeUnit(${i})">유닛 삭제</button>`)}
+function modelRows(i){let r=current(),u=normalizeUnit(r.units[i]),d=lookup(r,u.id);return u.models.map((m,j)=>{
+ let f=fixedLoadout(u.id,m.role),options=allowedRanged(u,d,m);
+ return `<div class="card"><b>모델 ${j+1} · ${esc(m.role)}</b><label>직군</label><select onchange="setModel(${i},${j},'role',this.value)">${d.roles.map(v=>`<option ${v===m.role?'selected':''}>${esc(v)}</option>`).join('')}</select><div class="tabs"><span class="loadout-label">Ranged Weapons</span><span class="loadout-label">Melee Weapons</span></div><label>Ranged Weapons ${f.lockedR?'🔒 고정':''}</label>${f.lockedR?`<div class="fixedgear">🔒 ${esc(m.ranged)} <small>변경 불가</small></div>`:`<select onchange="setModel(${i},${j},'ranged',this.value)">${options.map(v=>`<option value="${esc(v)}" ${v===m.ranged?'selected':''}>${esc(v)}</option>`).join('')}</select>`}<label>Melee Weapons ${f.lockedM?'🔒 고정':''}</label>${f.lockedM?`<div class="fixedgear">🔒 ${esc(m.melee)} <small>변경 불가</small></div>`:`<select onchange="setModel(${i},${j},'melee',this.value)">${[BASE_MELEE].map(v=>`<option>${esc(v)}</option>`).join('')}</select>`}<p class="muted">${esc(f.note)}</p></div>`}).join('')}
+function resizeUnit(i,n){let u=current().units[i],d=lookup(current(),u.id);u.size=+n;while(u.models.length<u.size)u.models.push({role:d.roles[Math.min(1,d.roles.length-1)],weapon:d.weapons[0]});u.models.length=u.size;normalizeUnit(u);save();$('models').innerHTML=modelRows(i);$('modelWarning').textContent=validateUnit(u)||'편성 기본 검사 완료';render(false)}
+function setModel(i,j,k,v){let u=current().units[i],m=u.models[j];if(k==='role'){m.role=v;delete m.ranged;delete m.melee;normalizeModel(u,m)}else{let f=fixedLoadout(u.id,m.role);if((k==='ranged'&&f.lockedR)||(k==='melee'&&f.lockedM))return;m[k]=v;m.weapon=m.ranged}save();$('models').innerHTML=modelRows(i);$('modelWarning').textContent=validateUnit(u)||'편성 기본 검사 완료';render(false)}
+
+const weapons={
+ 'Storm bolter':{en:'Storm bolter',range:'24"',a:'2',skill:'3+',s:'5',ap:'-1',d:'1',keywords:'Rapid Fire 2',note:'Range의 절반 이내 대상에게 Rapid Fire 규칙을 적용합니다.'},
+ '싸이케논':{en:'Psycannon',range:'24"',a:'3',skill:'3+',s:'8',ap:'-1',d:'2',keywords:'Psychic',note:'Psychic 무기입니다.'},
+ '인시너레이터':{en:'Incinerator',range:'12"',a:'D6',skill:'N/A',s:'6',ap:'-1',d:'1',keywords:'Torrent, Ignores Cover',note:'Torrent는 Hit Roll 없이 자동 Hit 처리합니다.'},
+ '사일렌서':{en:'Psilencer',range:'24"',a:'6',skill:'3+',s:'5',ap:'0',d:'1',keywords:'Psychic',note:'Psychic 무기입니다.'},
+ 'Nemesis force weapon':{en:'Nemesis force weapon',range:'Melee',a:'4',skill:'3+',s:'6',ap:'-2',d:'2',keywords:'Psychic',note:'Melee Weapon.'}
+};
+const detachments=[
+ {id:'warpbane',name:'Warpbane Task Force',dp:3,disposition:'Take and Hold',short:'Hallowed Ground를 중심으로 전투하는 편성',detail:'배치 구역 및 특정 조건에서 Hallowed Ground를 확보하고, 해당 구역에서 공격 능력을 강화하는 Detachment입니다.',strats:[{name:'Sanctified Kill Zone',cp:1,phase:'Shooting / Fight',short:'Hallowed Ground 내 유닛의 Wound Roll 보조',detail:'해당 구역에 완전히 들어온 GREY KNIGHTS 유닛이 공격할 때 Wound Roll 1을 다시 굴릴 수 있습니다. Purifier Squad는 Wound Roll 전체를 다시 굴릴 수 있습니다.'},{name:'Flames of Sanctity',cp:1,phase:'Fight 종료',short:'Purifier 주변 적에게 Mortal Wounds',detail:'Fight phase 종료 시 Purifier Squad 주변 6인치 내 적 유닛마다 D6를 굴려 4+이면 D3 Mortal Wounds. Castellan Crowe가 함께 있으면 굴림에 +1.'},{name:'Hallowed Beacon',cp:1,phase:'Movement',short:'Deep Strike 지원',detail:'GREY KNIGHTS Infantry 중 Terminator가 아닌 유닛의 Deep Strike와 관련된 Stratagem입니다. 대상과 배치 제한은 원문 확인이 필요합니다.'},{name:'Aegis Eternal',cp:1,phase:'상대 Shooting',short:'방어 지원',detail:'정확한 대상과 효과는 원문 검증 대기입니다.'},{name:'Fires of Covenant',cp:1,phase:'상대 Movement',short:'이동 대응',detail:'정확한 대상과 효과는 원문 검증 대기입니다.'},{name:'Repelling Sphere',cp:1,phase:'상대 Charge',short:'Charge 대응',detail:'정확한 대상과 효과는 원문 검증 대기입니다.'}]},
+ {id:'argent',name:'Argent Assault',dp:1,disposition:'Priority Assets',short:'Paladin 중심 전투',detail:'Paladin을 중심으로 구성하는 Detachment. 정확한 Rule과 Stratagem 상세는 검증 대기입니다.',strats:[]},
+ {id:'fires',name:'Fires of Purgation',dp:1,disposition:'Disruption',short:'정화 화력 중심',detail:'정확한 Detachment Rule 상세는 검증 대기입니다.',strats:[]},
+ {id:'immaterial',name:'Immaterial Interdiction',dp:1,disposition:'Reconnaissance',short:'Interceptor 중심 기동',detail:'Interceptor Squad를 활용하는 Detachment입니다.',strats:[{name:'Blades from the Beyond',cp:1,phase:'Fight',short:'Charge한 Interceptor의 Melee 공격에 Lance',detail:'이번 턴 Charge한 Interceptor Squad가 Fight할 때 그 유닛의 Melee 공격에 Lance 적용.'},{name:'By Thought Alone',cp:1,phase:'Shooting',short:'Interceptor가 Action 중에도 Shooting 가능',detail:'Interceptor Squad가 Action을 시작할 때 해당 Action으로 Shooting 자격을 잃지 않습니다.'},{name:'Responsive Displacement',cp:1,phase:'상대 Movement',short:'상대 Fall Back 후 Interceptor 이동',detail:'교전 중이던 적이 Fall Back을 끝내고 Interceptor가 더 이상 Engagement Range 안에 없다면 최대 D3+3인치 Normal Move.'}]},
+ {id:'brotherhood',name:'Brotherhood Strike',dp:2,disposition:'Purge the Foe',short:'기본 전투 편성',detail:'상세 Rule 검증 대기.',strats:[]},
+ {id:'hallowed',name:'Hallowed Conclave',dp:2,disposition:'Take and Hold',short:'Terminator 중심 방어',detail:'상세 Rule 검증 대기.',strats:[{name:'Giants of the Battlefield',cp:1,phase:'Fight',short:'Terminator Melee Weapon의 A +1',detail:'Fight phase에 아직 Fight하지 않은 GREY KNIGHTS TERMINATOR 유닛 1개를 선택. 해당 Phase 동안 그 유닛 모델의 Melee Weapon A가 1 증가합니다.'}]},
+ {id:'augurium',name:'Augurium Task Force',dp:2,disposition:'Reconnaissance',short:'예지와 공격 정확도',detail:'상세 Rule 검증 대기.',strats:[{name:'Aggressive Anticipation',cp:1,phase:'Shooting / Fight',short:'Hit Roll 재굴림',detail:'아직 Shooting/Fight하지 않은 GREY KNIGHTS PSYKER 유닛이 해당 공격의 Hit Roll을 다시 굴릴 수 있습니다.'},{name:'Appointed Hour',cp:1,phase:'Shooting / Fight',short:'5+ Hit Roll을 Critical Hit로 처리',detail:'선택한 GREY KNIGHTS PSYKER 유닛의 수정 전 Hit Roll 5+를 Critical Hit로 처리합니다.'}]},
+ {id:'banishers',name:'Banishers',dp:2,disposition:'Disruption',short:'Daemon 대응',detail:'상세 Rule 검증 대기.',strats:[]},
+ {id:'sanctic',name:'Sanctic Spearhead',dp:2,disposition:'Priority Assets',short:'선봉 중심',detail:'상세 Rule 검증 대기.',strats:[]}
+];
+
+// Grey Knights expansion: reference profiles are explicitly marked for verification.
+const extraUnits=[
+ ['voldus','그랜드 마스터 볼두스','Grand Master Voldus','Epic Hero',['Grand Master Voldus'],['Storm bolter','Malleus Argyrum']],
+ ['draigo','칼도르 드라이고','Kaldor Draigo','Epic Hero',['Kaldor Draigo'],['Storm bolter','Titansword']],
+ ['grandmaster','그랜드 마스터','Grand Master','Character',['Grand Master'],['Storm bolter','Psycannon','Incinerator','Psilencer']],
+ ['brothercaptain','브라더 캡틴','Brother-Captain','Character',['Brother-Captain'],['Storm bolter','Psycannon','Incinerator','Psilencer']],
+ ['stern','브라더 캡틴 스턴','Brother-Captain Stern','Epic Hero',['Brother-Captain Stern'],['Storm bolter']],
+ ['techmarine','브라더후드 테크마린','Brotherhood Techmarine','Character',['Techmarine'],['Bolt pistol','Flamer','Melta gun']],
+ ['chaplain','브라더후드 채플린','Brotherhood Chaplain','Character',['Chaplain'],['Storm bolter']],
+ ['ancient','브라더후드 에인션트','Brotherhood Ancient','Character',['Ancient'],['Storm bolter']],
+ ['ven','베너러블 드레드노트','Venerable Dreadnought','Vehicle',['Dreadnought'],['Assault cannon','Multi-melta','Twin lascannon']],
+ ['landraider','랜드 레이더','Land Raider','Vehicle',['Land Raider'],['Twin lascannon','Twin heavy bolter']],
+ ['redeemer','랜드 레이더 리디머','Land Raider Redeemer','Vehicle',['Land Raider'],['Flamestorm cannon','Twin assault cannon']],
+ ['crusader','랜드 레이더 크루세이더','Land Raider Crusader','Vehicle',['Land Raider'],['Hurricane bolter','Twin assault cannon']],
+ ['rhino','라이노','Rhino','Transport',['Rhino'],['Storm bolter']],
+ ['razorback','레이저백','Razorback','Transport',['Razorback'],['Twin heavy bolter','Twin lascannon']]
+];
+extraUnits.forEach(([id,ko,en,category,roles,opts])=>{if(!catalog.gk.some(x=>x.id===id))catalog.gk.push({id,ko,en,category,sizes:[1],points:null,roles,weapons:opts,stats:null,abilities:[]})});
+// Normalise display to original English weapon terminology.
+const WNAME={'Storm bolter':'Storm bolter','싸이케논':'Psycannon','인시너레이터':'Incinerator','사일렌서':'Psilencer','헤비 싸이케논':'Heavy psycannon','헤비 인시너레이터':'Heavy incinerator','Purifying Flame':'Purifying flame'};
+Object.values(catalog).flat().forEach(u=>u.weapons=u.weapons.map(w=>WNAME[w]||w));
+const gkWeapons={
+ 'Storm bolter':['24"','2','3+','5','-1','1','Rapid Fire 2','r'],
+ 'Psycannon':['24"','3','3+','8','-1','2','Psychic','r'],
+ 'Incinerator':['12"','D6','—','6','-1','1','Torrent, Ignores Cover','r'],
+ 'Psilencer':['24"','6','3+','5','0','1','Psychic','r'],
+ 'Heavy psycannon':['24"','6','3+','10','-2','3','Psychic','r'],
+ 'Heavy incinerator':['18"','2D6','—','6','-1','1','Torrent, Ignores Cover','r'],
+ 'Gatling psilencer':['24"','12','3+','6','-1','1','Psychic','r'],
+ 'Nemesis force weapon':['Melee','4','3+','6','-2','2','Psychic','m'],
+ 'Nemesis daemon greathammer':['Melee','5','3+','14','-3','D6+1','Psychic','m'],
+ 'Nemesis greatsword':['Melee','6','3+','10','-2','3','Psychic','m'],
+ 'Purifying flame':['18"','D6','—','6','-1','1','Psychic, Torrent','r'],
+ 'Vortex of Doom':['18"','D6','3+','8','-2','2','Psychic','r']
+};
+Object.entries(gkWeapons).forEach(([name,a])=>weapons[name]={en:name,range:a[0],a:a[1],skill:a[2],s:a[3],ap:a[4],d:a[5],keywords:a[6],kind:a[7],unverified:true});
+// Add unit-specific available equipment; no invented additional wargear points.
+const additions={term:['Nemesis force weapon'],strike:['Nemesis force weapon'],pal:['Nemesis force weapon'],dread:['Gatling psilencer','Nemesis daemon greathammer','Nemesis greatsword'],gmdread:['Gatling psilencer','Nemesis daemon greathammer','Nemesis greatsword'],purifier:['Purifying flame','Nemesis force weapon'],interceptor:['Nemesis force weapon'],purgation:['Nemesis force weapon'],librarian:['Vortex of Doom','Nemesis force weapon'],crowe:['Purifying flame','Nemesis force weapon'],champ:['Nemesis force weapon']};
+catalog.gk.forEach(u=>{(additions[u.id]||[]).forEach(w=>{if(!u.weapons.includes(w))u.weapons.push(w)});if(u.id==='pal')u.stats={M:'5"',T:6,Sv:'2+',W:3,Ld:'6+',OC:2,Inv:'4+'};if(['purifier','interceptor','purgation'].includes(u.id))u.stats={M:'6"',T:5,Sv:'2+',W:2,Ld:'6+',OC:2};if(['dread','gmdread'].includes(u.id))u.stats={M:'8"',T:8,Sv:'2+',W:13,Ld:'6+',OC:4,Inv:'4+'}});
+// Replace v3's sparse Stratagem lists with short verified summaries.
+const detUpdates={
+ brotherhood:{rule:'Fury of Titan',desc:'Deep Strike로 배치한 유닛은 그 턴 종료까지 공격 시 Hit Roll 1과 Wound Roll 1을 재굴림합니다.',strats:[
+ ['Truesilver Channelling',2,'Fight','GREY KNIGHTS INFANTRY가 Fight하기 전','그 유닛의 Psychic 무기에 Devastating Wounds 부여'],
+ ['Combat Manifestation',1,'Your Movement','Deep Strike로 등장하는 GREY KNIGHTS 유닛','적에게서 6" 초과 위치에 배치할 수 있으나 그 턴 Charge 불가'],
+ ['Purgation Pattern',1,'Your Shooting','이번 턴 Deep Strike한 GREY KNIGHTS 유닛','그 Phase 동안 무기에 Sustained Hits 1 부여'],
+ ['Duty Unending',1,'Opponent Movement','적이 Engagement Range에서 Fall Back 직후','대상·효과 상세는 원문 확인 필요'],
+ ['Expeditious Exit',2,'End opponent Fight','GREY KNIGHTS PSYKER INFANTRY','Deep Strike 보유 모델로만 구성된 유닛을 Strategic Reserves로 이동'] ]},
+ hallowed:{rule:'Duty Before All',desc:'GREY KNIGHTS TERMINATOR 유닛은 Fall Back한 턴에도 Shooting 및 Charge 선언이 가능합니다.',strats:[
+ ['Giants of the Battlefield',1,'Fight','아직 Fight하지 않은 GREY KNIGHTS TERMINATOR','그 Phase 동안 Melee 무기의 A +1'],
+ ['Unending Fidelity',1,'Opponent Shooting / Fight','공격 대상이 된 GREY KNIGHTS INFANTRY','파괴된 모델이 반격할 수 있는 조건부 효과; 원문 확인'],
+ ['Precognitive Strategies',1,'Opponent Movement','적 이동 종료 후 8" 이내의 비Engaged INFANTRY','D6"까지 Normal Move'],
+ ['Shining Resolve',1,'Opponent Shooting','공격 대상이 된 GREY KNIGHTS INFANTRY','적 공격의 S가 내 T보다 크면 Wound Roll -1'] ]},
+ augurium:{rule:'Augurium Task Force',desc:'미래를 예측하고 공격의 정확도를 높이는 PSYKER 중심 편성. Detachment Rule의 정확한 효과는 원문 확인이 필요합니다.',strats:[
+ ['Aggressive Anticipation',1,'Shooting / Fight','아직 공격하지 않은 GREY KNIGHTS PSYKER','Hit Roll 재굴림'],
+ ['Appointed Hour',1,'Shooting / Fight','아직 공격하지 않은 GREY KNIGHTS PSYKER','수정 전 Hit Roll 5+를 Critical Hit로 취급'],
+ ['Necessary End',1,'Fight','공격받는 GREY KNIGHTS INFANTRY','조건을 충족한 파괴 모델이 제거 전 Fight할 수 있음'] ]},
+ warpbane:{rule:'Hallowed Ground',desc:'Hallowed Ground 안의 유닛을 강화하는 Detachment. 지면을 확보해 Purifier와 Infantry의 공격·배치를 지원합니다.',strats:[
+ ['Sanctified Kill Zone',1,'Shooting / Fight','Hallowed Ground 안의 GREY KNIGHTS','Wound Roll 1 재굴림; Purifier Squad는 Wound Roll 재굴림'],
+ ['Flames of Sanctity',1,'End Fight','Purifier Squad','6" 이내 적마다 4+에 D3 Mortal Wounds; Crowe가 있으면 주사위 +1'],
+ ['Hallowed Beacon',1,'Reinforcements','Deep Strike하는 비TERMINATOR GREY KNIGHTS INFANTRY','Hallowed Ground 안, 적으로부터 6" 초과 위치에 배치'],
+ ['Fires of Covenant',1,'Start opponent Movement','GREY KNIGHTS INFANTRY','6" 내 적의 이동·배치에 반응해 조건부 D3 Mortal Wounds'] ]},
+ immaterial:{rule:'Immaterial Interdiction',desc:'Interceptor Squad의 기동과 목표 수행을 지원합니다. Detachment Rule은 원문 확인 필요.',strats:[
+ ['Blades from the Beyond',1,'Fight','이번 턴 Charge한 Interceptor Squad','Melee 공격에 Lance 부여'],
+ ['By Thought Alone',1,'Your Shooting','Action 시작하는 Interceptor Squad','Action을 하면서 Shooting 가능'],
+ ['Responsive Displacement',1,'Opponent Movement','교전 상대가 Fall Back한 뒤의 Interceptor Squad','D3+3" Normal Move'] ]},
+ fires:{rule:'Fires of Purgation',desc:'Purgation Squad 중심의 원거리 화력 편성입니다.',strats:[['Soul-Locked',1,'Your Movement','Fall Back하는 Purgation Squad','Fall Back해도 Shooting 가능'],['Focused Immolation',1,'Your Shooting','Purgation Squad','집중 사격 강화; 세부 수치는 원문 확인 필요']]},
+ argent:{rule:'Argent Assault',desc:'기동·공격을 활용하는 Detachment. 정확한 Rule은 원문 확인 필요.',strats:[]}
+};
+Object.entries(detUpdates).forEach(([id,o])=>{let d=detachments.find(x=>x.id===id);if(!d)return;d.detail=o.rule+' — '+o.desc;d.strats=o.strats.map(a=>({name:a[0],cp:a[1],phase:a[2],short:a[4],detail:'WHEN: '+a[2]+' / TARGET: '+a[3]+' / EFFECT: '+a[4]}))});
+const meleeDefault={en:'Nemesis force weapon',range:'Melee',a:'4',skill:'3+',s:'6',ap:'-2',d:'2',keywords:'Psychic'};
+const WEAPON_TAG_GUIDE={
+'Torrent':'Hit Roll을 하지 않고 공격이 자동으로 Hit합니다.',
+'Ignores Cover':'대상의 Benefit of Cover로 인한 Saving Throw 보너스를 무시합니다.',
+'Rapid Fire':'대상이 무기 Range의 절반 이내라면 표시된 수만큼 A가 증가합니다.',
+'Assault':'Advance한 턴에도 이 무기로 Shooting할 수 있습니다.',
+'Heavy':'이 턴 Remain Stationary했다면 해당 무기의 Hit Roll에 +1을 적용합니다.',
+'Pistol':'Engagement Range에서도 사격할 수 있습니다. 일반적인 Infantry 모델은 Pistol 또는 다른 Ranged Weapons 중 선택합니다.',
+'Blast':'대상 유닛의 모델 5기당 A가 +1 증가합니다. Engagement Range 안의 대상에게 사격할 수 없습니다.',
+'Melta':'대상이 Range의 절반 이내라면 Damage가 표시된 수만큼 증가합니다.',
+'Anti-Infantry':'Infantry 대상 Wound Roll이 표시된 값 이상이면 Critical Wound입니다.',
+'Anti-Vehicle':'Vehicle 대상 Wound Roll이 표시된 값 이상이면 Critical Wound입니다.',
+'Anti-Monster':'Monster 대상 Wound Roll이 표시된 값 이상이면 Critical Wound입니다.',
+'Precision':'Critical Hit로 Character를 지정할 수 있는 조건에서, 해당 공격을 Attached Unit의 보이는 Character에 할당할 수 있습니다.',
+'Psychic':'Psychic Attack으로 취급됩니다. 자체적인 명중·피해 보너스는 없으며 관련 Ability와 상호작용합니다.',
+'Sustained Hits':'Critical Hit마다 표시된 수만큼 추가 Hit가 발생합니다.',
+'Lethal Hits':'Critical Hit는 Wound Roll 없이 자동 Wound 처리됩니다.',
+'Devastating Wounds':'Critical Wound의 Damage는 Saving Throw로 막을 수 없습니다.',
+'Twin-linked':'해당 무기의 Wound Roll을 다시 굴릴 수 있습니다.',
+'Extra Attacks':'다른 Melee Weapon을 선택했어도 이 무기로 추가 공격할 수 있습니다.',
+'Hazardous':'해당 무기를 사용한 뒤 Hazardous test를 수행합니다. 실패 시 규칙에 따라 피해를 받습니다.',
+'Indirect Fire':'보이지 않는 대상을 사격할 수 있지만 Indirect Fire 제한을 적용합니다.',
+'One Shot':'전투 전체에서 해당 무기는 한 번만 사용할 수 있습니다.',
+'Lance':'이 턴 Charge했다면 해당 무기의 Wound Roll에 +1을 적용합니다.'
+};
+function weaponTagHelp(entries){
+ const seen=new Map();
+ entries.forEach(([, ,w])=>String(w.keywords||'').split(',').forEach(raw=>{
+  const tag=raw.trim();if(!tag||tag==='—'||tag==='검증 대기'||tag.startsWith('Wargear'))return;
+  const base=Object.keys(WEAPON_TAG_GUIDE).find(k=>tag===k||tag.startsWith(k+' '));
+  if(base&&!seen.has(tag))seen.set(tag,WEAPON_TAG_GUIDE[base]);
+ }));
+ if(!seen.size)return '';
+ return `<details class="tag-help"><summary>무기 Keywords 간단 설명 (${seen.size}개) ▾</summary><div class="tag-help-list">${Array.from(seen,([tag,desc])=>`<div><b>${esc(tag)}</b><span>${esc(desc)}</span></div>`).join('')}</div></details>`;
+}
+function weaponTable(entries,melee=false){if(!entries.length)return '<p class="sub">선택된 무기가 없습니다.</p>';return `<div class="weapontable"><table><thead><tr><th>Weapon</th><th>Range</th><th>A</th><th>${melee?'WS':'BS'}</th><th>S</th><th>AP</th><th>D</th><th>Keywords</th></tr></thead><tbody>${entries.map(([name,count,w])=>`<tr><td>${esc(name)}${count>1?' ×'+count:''}</td><td>${esc(w.range)}</td><td>${esc(w.a)}</td><td>${esc(w.skill)}</td><td>${esc(w.s)}</td><td>${esc(w.ap)}</td><td>${esc(w.d)}</td><td>${esc(w.keywords)}</td></tr>`).join('')}</tbody></table></div>${weaponTagHelp(entries)}`}
+function selectedWeapons(u,kind){normalizeUnit(u);let count={};u.models.forEach(m=>{let name=kind==='m'?m.melee:m.ranged;if(name)count[name]=(count[name]||0)+1});if(kind==='r'&&u.id==='librarian')count['Vortex of Doom']=(count['Vortex of Doom']||0)+1;if(kind==='r'&&u.id==='purifier')count['Purifying flame']=(count['Purifying flame']||0)+u.size;return Object.entries(count).map(([name,n])=>[name,n,weapons[name]]).filter(x=>x[2]&&x[2].kind===kind)}
+function gameData(u,d){let profiles=d.stats?`<div class="statgrid">${['M','T','Sv','W','Ld','OC','Inv'].map(k=>`<div class="stat">${k==='Inv'?'InvSv':k}<b>${esc(d.stats[k]??'—')}</b></div>`).join('')}</div>`:'<p class="sub">Stats 데이터 검증 대기</p>';return `<div class="card"><div class="subhead">Unit Profile</div>${profiles}</div><div class="card"><div class="tabs"><button class="on" id="weaponTabR" onclick="switchWeaponTab('r')">Ranged Weapons</button><button id="weaponTabM" onclick="switchWeaponTab('m')">Melee Weapons</button></div><div id="weaponPaneR">${weaponTable(selectedWeapons(u,'r'))}</div><div id="weaponPaneM" class="hidden">${weaponTable(selectedWeapons(u,'m'),true)}</div></div><p class="warning">표는 실제 선택된 Ranged/Melee 무장만 합산합니다. 프로필과 편성 제한은 최신 공식 Datasheet와 대조 전입니다.</p>`}
+function switchWeaponTab(kind){let r=kind==='r';$('weaponPaneR').classList.toggle('hidden',!r);$('weaponPaneM').classList.toggle('hidden',r);$('weaponTabR').classList.toggle('on',r);$('weaponTabM').classList.toggle('on',!r)}
+function detachmentSheet(){let r=current();if(!r)return;let d=detachments.find(x=>x.id===(r.detachment||'warpbane'));openSheet(`<div class="row"><h2>Detachment 선택</h2><button onclick="closeSheet()">닫기</button></div><p class="sub">11판 기준. DP는 Points와 별도 자원입니다.</p>${detachments.map(x=>`<div class="modelbox"><div class="row"><div><b>${esc(x.name)}</b><p class="muted">${esc(x.disposition)} · ${x.dp} DP</p><p class="sub">${esc(x.short)}</p></div><button class="${d.id===x.id?'primary':''}" onclick="chooseDetachment('${x.id}')">${d.id===x.id?'선택됨':'선택'}</button></div></div>`).join('')}`)}
+function chooseDetachment(id){current().detachment=id;save();closeSheet();render()}
+function rulePage(){let r=current(),id=r?.detachment||'warpbane',d=detachments.find(x=>x.id===id);return `<div class="card"><h2>Detachment</h2><div class="row"><b>${esc(d.name)}</b><span class="badgecost">${d.dp} DP</span></div><p class="muted">${esc(d.disposition)}</p><p class="sub">${esc(d.detail)}</p><button onclick="detachmentSheet()">Detachment 변경</button></div><div class="row"><h2>Stratagems</h2><span class="pill">${d.strats.length}개 등록</span></div>${d.strats.length?d.strats.map(s=>`<div class="card"><details><summary><span>${esc(s.name)}</span><span class="badgecost" style="float:right">${s.cp} CP</span><div class="muted">${esc(s.phase)}</div><div class="sub">${esc(s.short)}</div></summary><p>${esc(s.detail)}</p></details></div>`).join(''):'<div class="warning">이 Detachment의 Stratagem 원문 검증 대기입니다. 확인되지 않은 효과는 표시하지 않습니다.</div>'}<div class="card"><h2>Army Rule</h2><details><summary>Gate of Infinity</summary><p>상대 Fight phase 종료 시 Engagement Range 밖의 적격 GREY KNIGHTS 유닛을 선택하여 Strategic Reserves로 이동할 수 있습니다. Battle Size에 따른 선택 가능 수량과 이후 Ingress 규칙은 최신 공식 원문을 확인하세요.</p></details></div><p class="warning">규칙은 요약 번역이며 공식 원문을 대체하지 않습니다. 미검증 항목은 실제 경기 전에 확인하세요.</p>`}
+
+function datasheet(i){let r=current(),u=r.units[i],d=lookup(r,u.id);openSheet(`<div class="row"><h2>게임용 Datasheet</h2><button onclick="closeSheet()">닫기</button></div><h2>${esc(d.ko)}</h2><p class="muted">${esc(d.en)} · ${u.size} models</p>${gameData(u,d)}<div class="card"><b>Abilities</b>${d.abilities.length?d.abilities.map(a=>`<details><summary>${esc(a.name)}<div class="sub">${esc(a.short)}</div></summary><p>${esc(a.detail)}</p></details>`).join(''):'<p class="sub">이 유닛의 Ability 상세는 검증 대기입니다.</p>'}</div><div class="card"><b>Models / Wargear</b>${u.models.map((m,j)=>`<div class="item"><b>${j+1}. ${esc(m.role)}</b><div class="sub">Ranged: ${esc(m.ranged||m.weapon)} · Melee: ${esc(m.melee||BASE_MELEE)}</div></div>`).join('')}</div><p class="warning">무기 수치는 일부 확인된 샘플만 표시합니다. 현재 규칙과 일치하는지 경기 전 확인하세요.</p>`)}
+function exportRoster(){let blob=new Blob([JSON.stringify(rosters,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='roster-forge-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}function importRoster(ev){let f=ev.target.files[0];if(!f)return;f.text().then(t=>{try{let data=JSON.parse(t);if(!Array.isArray(data))throw Error();rosters=data.filter(x=>x&&['gk','dg'].includes(x.faction)&&Array.isArray(x.units));active=0;save();render();alert('백업을 불러왔습니다')}catch(e){alert('올바른 백업 파일이 아닙니다')}})}function render(updateSheet=true){let r=current();$('title').textContent=page==='home'?'내 로스터':page==='list'?'로스터 편성':'게임 규칙';['home','list','info'].forEach(x=>$('nav-'+x).classList.toggle('active',x===(page==='rules'?'info':page)));$('fab').classList.toggle('hidden',page!=='list'||!r);let html='';if(page==='home'){html=`<div class="row"><h2>저장된 로스터</h2><button onclick="makeRoster()">＋ 만들기</button></div>${rosters.length?rosters.map((x,i)=>`<div class="card" onclick="active=${i};page='list';render()"><div class="row"><b>${esc(x.name)}</b><span>›</span></div><p class="muted">Grey Knights · ${x.limit} pts</p><span class="pill">${x.units.length}개 유닛</span></div>`).join(''):'<div class="empty">로스터를 만들어 시작하세요.</div>'}`}else if(page==='list'){if(!r){page='home';return render()}let t=totalCost(r),det=detachments.find(x=>x.id===(r.detachment||'warpbane'));html=`<div class="card"><div class="row"><b>${esc(r.name)}</b><span class="pill">Grey Knights</span></div><h1 style="margin:12px 0 3px">${t===null?'일부 미확인':t+' pts'} <small>/ ${r.limit} pts</small></h1><p class="muted">${t===null?'일부 유닛 Points 미확인 · 임의 합계 표시 안 함':'참고 Points 합계 · 최신 공식 수치 확인 필요'}</p><div class="progress"><div style="width:${t===null?0:Math.min(100,t/r.limit*100)}%"></div></div><div class="row" style="margin-top:13px"><div><b>${esc(det.name)}</b><div class="muted">${det.dp} DP · ${esc(det.disposition)}</div></div><button onclick="detachmentSheet()">변경</button></div></div><div class="row"><h2>유닛 · ${r.units.length}</h2><button onclick="showAdd()">＋ 추가</button></div>${r.units.map((u,i)=>{let d=lookup(r,u.id);if(!d)return '';return `<div class="card"><div class="row"><div><b>${esc(d.ko)}</b><div class="muted">${u.size} models · ${unitCost(r,u)===null?'Points 미확인':unitCost(r,u)+' pts'}</div></div><button onclick="editUnit(${i})">편성</button></div>${validateUnit(u)?'<p class="warning">'+esc(validateUnit(u))+'</p>':''}<p class="sub">${esc([...new Set(u.models.map(m=>m.ranged||m.weapon))].join(' · '))}</p><button onclick="datasheet(${i})">Stats / Ability 보기</button></div>`}).join('')||'<div class="empty">유닛을 추가해 주세요.</div>'}<p class="warning">Grey Knights 우선 지원 · New Recruit 스타일의 독립 앱 · 미검증 규칙은 공식 자료와 비교하세요.</p>`}else{html=rulePage()+`<div class="card"><b>데이터 및 백업</b><p class="muted">로스터는 이 기기 브라우저에 저장됩니다.</p><button onclick="exportRoster()">백업 내보내기</button><label>백업 불러오기</label><input type="file" accept=".json" onchange="importRoster(event)"></div>`}$('main').innerHTML=html}
+// Final-style update: model roles are equipment flags, not a mutually-exclusive translation.
+const SPECIAL=['Psycannon','Psilencer','Incinerator'];
+const FIXED={crowe:['Purifying flame','Black Blade of Antwyr'],librarian:['Storm bolter','Nemesis force weapon'],draigo:['Storm bolter','Titansword'],voldus:['Storm bolter','Malleus Argyrum']};
+const RULESET={
+ term:{leader:'Justicar',basic:'Terminator',ancient:true,apothecary:true,heavyPer5:1,ancientHeavy:true,heavyMelee:false},
+ pal:{leader:'Paragon',basic:'Paladin',ancient:true,apothecary:true,heavyPer5:2,ancientHeavy:true,heavyMelee:false},
+ strike:{leader:'Justicar',basic:'Grey Knight',heavyPer5:1,heavyMelee:true},
+ interceptor:{leader:'Justicar',basic:'Interceptor',heavyPer5:1,heavyMelee:true},
+ purifier:{leader:'Knight of the Flame',basic:'Purifier',heavyPer5:2,heavyMelee:true},
+ purgation:{leader:'Justicar',basic:'Purgator',heavyPer5:4,heavyMelee:true}
+};
+function defaultModel(id,j){let rule=RULESET[id];return {role:rule?(j===0?rule.leader:rule.basic):(catalog.gk.find(d=>d.id===id)?.roles[j===0?0:Math.min(1,(catalog.gk.find(d=>d.id===id)?.roles.length||1)-1)]||'Model'),ranged:'Storm bolter',melee:'Nemesis force weapon',banner:false,narthecium:false}}
+function isAncient(m){return !!m.banner||m.role==='Ancient'}
+function isApothecary(m){return !!m.narthecium||m.role==='Apothecary'}
+function syncUnit(u){let rule=RULESET[u.id];u.models=u.models||[];while(u.models.length<u.size)u.models.push(defaultModel(u.id,u.models.length));u.models.length=u.size;u.models.forEach((m,j)=>{if(!m.role)m.role=defaultModel(u.id,j).role;if(m.role==='Ancient')m.banner=true;if(m.role==='Apothecary')m.narthecium=true;if(rule){m.role=j===0?rule.leader:rule.basic;if(j===0){m.banner=false;m.narthecium=false}if(!rule.ancient)m.banner=false;if(!rule.apothecary)m.narthecium=false}if(m.ranged===undefined)m.ranged=weaponEnglish(m.weapon||'Storm bolter');if(m.melee===undefined)m.melee='Nemesis force weapon';if(m.narthecium){m.ranged='Apothecary\'s narthecium';m.banner=false}if(!m.ranged)m.ranged='Storm bolter';if(!m.melee)m.melee='Nemesis force weapon';m.weapon=m.ranged});return u}
+normalizeUnit=syncUnit;
+function roleName(u,m,j){if(isApothecary(m))return 'Apothecary';if(isAncient(m))return 'Ancient';return m.role}
+function modelOptions(u,m,j){let rule=RULESET[u.id];if(m.narthecium)return ["Apothecary's narthecium"];if(rule){if(j===0)return ['Storm bolter'];let opts=['Storm bolter',...SPECIAL];if(m.banner&&!rule.ancientHeavy)return ['Storm bolter'];return opts}let d=lookup(current(),u.id);return (d?.weapons||[]).map(weaponEnglish).filter(w=>weapons[w]?.kind==='r')}
+function validateUnit(u){syncUnit(u);let rule=RULESET[u.id];if(!rule)return '';let anc=u.models.filter(isAncient),ap=u.models.filter(isApothecary);if(anc.length>1)return 'Ancient’s Banner는 분대당 1개까지';if(ap.length>1)return 'Apothecary’s narthecium은 분대당 1개까지';let heavy=u.models.filter(m=>SPECIAL.includes(m.ranged));let regular=heavy.filter(m=>!isAncient(m));if(regular.length>Math.floor(u.size/5)*rule.heavyPer5)return `일반 모델 특수무장은 5 models당 최대 ${rule.heavyPer5}개`;if(anc.some(m=>SPECIAL.includes(m.ranged))&&!rule.ancientHeavy)return '이 유닛의 Ancient는 특수무장을 사용할 수 없습니다';if(anc.length&&!rule.ancient)return 'Ancient를 사용할 수 없는 유닛입니다';if(ap.length&&!rule.apothecary)return 'Apothecary를 사용할 수 없는 유닛입니다';return ''}
+function fixRoles(u){let rule=RULESET[u.id];if(!rule)return;u.models.forEach((m,j)=>{m.role=j===0?rule.leader:rule.basic})}
+function editUnit(i){selectedUnit=i;let r=current(),u=syncUnit(r.units[i]),d=lookup(r,u.id);openSheet(`<div class="row"><h2>${esc(d.ko)}</h2><button onclick="closeSheet()">완료</button></div><p class="muted">${esc(d.en)}</p><label>분대 규모</label><select onchange="resizeUnit(${i},this.value)">${d.sizes.map(n=>`<option value="${n}" ${n===u.size?'selected':''}>${n} models</option>`).join('')}</select><div class="warning">직군은 영어 원문 유지 · Ancient도 특수무장 선택 가능 · Apothecary의 Narthecium은 자동 고정</div><div id="modelWarning" class="warning">${esc(validateUnit(u)||'편성 기본 검사 완료')}</div><div id="models">${modelRows(i)}</div><button style="width:100%" onclick="closeSheet();datasheet(${i})">선택 무장 Stats / Ability 보기</button><button class="danger" style="width:100%;margin-top:10px" onclick="closeSheet();removeUnit(${i})">유닛 삭제</button>`)}
+function modelRows(i){let u=syncUnit(current().units[i]),d=lookup(current(),u.id),rule=RULESET[u.id];return u.models.map((m,j)=>{let isFixed=!!FIXED[u.id]||m.narthecium,opts=modelOptions(u,m,j),label=roleName(u,m,j),extra=rule&&j>0?`<div class="row"><label style="flex:1">Ancient’s Banner</label><input style="width:22px" type="checkbox" ${m.banner?'checked':''} ${!rule.ancient||m.narthecium?'disabled':''} onchange="toggleEquipment(${i},${j},'banner',this.checked)"></div><div class="row"><label style="flex:1">Apothecary’s narthecium</label><input style="width:22px" type="checkbox" ${m.narthecium?'checked':''} ${!rule.apothecary||m.banner?'disabled':''} onchange="toggleEquipment(${i},${j},'narthecium',this.checked)"></div>`:'';return `<div class="card" style="padding:13px"><div class="row"><b>${j+1}. ${esc(label)}</b><span class="pill">${esc(m.ranged)}</span></div>${extra}<label>Ranged Weapons ${isFixed?'🔒 고정':''}</label>${isFixed?`<div class="fixedgear">🔒 ${esc(m.ranged)}</div>`:`<select onchange="setModel(${i},${j},'ranged',this.value)">${[...new Set([...opts,m.ranged])].map(v=>`<option value="${esc(v)}" ${v===m.ranged?'selected':''}>${esc(v)}</option>`).join('')}</select>`}<label>Melee Weapons ${rule&&!rule.heavyMelee||isFixed?'🔒 고정':'(특수무장 선택 시 자동 변경)'}</label><div class="fixedgear">🔒 ${esc(m.melee)}</div><button style="margin-top:9px;width:100%" onclick="modelWeaponInfo(${i},${j})">이 모델의 무기 Stats</button></div>`}).join('')}
+function rerenderEditor(i){let old=$('sheetContent').scrollTop;let u=current().units[i];$('models').innerHTML=modelRows(i);$('modelWarning').textContent=validateUnit(u)||'편성 기본 검사 완료';$('sheetContent').scrollTop=old;save();render(false)}
+function resizeUnit(i,n){let u=current().units[i];u.size=+n;syncUnit(u);fixRoles(u);rerenderEditor(i)}
+function toggleEquipment(i,j,k,checked){let u=current().units[i];syncUnit(u);let m=u.models[j];if(j===0)return;if(checked&&u.models.some((x,t)=>t!==j&&x[k])){alert('분대당 1개만 선택할 수 있습니다.');rerenderEditor(i);return}m[k]=checked;if(k==='narthecium'){if(checked){m.banner=false;m.ranged="Apothecary's narthecium"}else m.ranged='Storm bolter'}if(k==='banner'&&checked)m.narthecium=false;rerenderEditor(i)}
+function setModel(i,j,k,v){let u=current().units[i];syncUnit(u);let m=u.models[j];if(k!=='ranged'||!modelOptions(u,m,j).includes(v))return;m.ranged=v;m.weapon=v;if(RULESET[u.id]?.heavyMelee)m.melee=SPECIAL.includes(v)?'Close combat weapon':'Nemesis force weapon';rerenderEditor(i)}
+function modelWeaponInfo(i,j){let u=syncUnit(current().units[i]),m=u.models[j];let r=weapons[m.ranged],w=weapons[m.melee];openSheet(`<div class="row"><h2>${esc(roleName(u,m,j))} · 무기 Stats</h2><button onclick="editUnit(${i})">뒤로</button></div><h3>Ranged Weapons</h3>${r?weaponTable([[m.ranged,1,r]]):'<p class="warning">무기 Stats 검증 대기</p>'}<h3>Melee Weapons</h3>${w?weaponTable([[m.melee,1,w]],true):'<p class="warning">무기 Stats 검증 대기</p>'}`)}
+function selectedWeapons(u,kind){syncUnit(u);let counts={};u.models.forEach(m=>{let name=kind==='r'?m.ranged:m.melee;if(name)counts[name]=(counts[name]||0)+1});if(kind==='r'&&u.id==='librarian')counts['Vortex of Doom']=1;if(kind==='r'&&u.id==='purifier')counts['Purifying flame']=u.size;return Object.entries(counts).filter(([name])=>weapons[name]?.kind===kind).map(([name,n])=>[name,n,weapons[name]])}
+// Verified subset: other profiles remain explicitly unverified, never silently fabricated.
+weapons["Apothecary's narthecium"]={en:"Apothecary's narthecium",kind:'r',range:'—',a:'—',skill:'—',s:'—',ap:'—',d:'—',keywords:'Wargear (공격 무기 아님)'};
+weapons['Close combat weapon']={en:'Close combat weapon',kind:'m',range:'Melee',a:'3',skill:'3+',s:'4',ap:'0',d:'1',keywords:'—'};
+weapons['Black Blade of Antwyr']={en:'Black Blade of Antwyr',kind:'m',range:'Melee',a:'—',skill:'—',s:'—',ap:'—',d:'—',keywords:'검증 대기'};
+let term=catalog.gk.find(x=>x.id==='term'),pal=catalog.gk.find(x=>x.id==='pal');term.sizes=[4,5,8,10];term.points={4:150,5:185,8:315,10:380};pal.sizes=[4,5,8,10];pal.points={4:185,5:230,8:385,10:490};
+function unitCost(r,u){let d=lookup(r,u.id);if(!d?.points||d.points[u.size]==null)return null;let base=d.points[u.size];if(u.id==='term'||u.id==='pal')base+=u.models.filter(m=>m.ranged==='Psycannon').length*5;return base}
+function addUnit(id){let r=current(),d=lookup(r,id),size=d.sizes[0];r.units.push({id,size,models:Array.from({length:size},(_,j)=>defaultModel(id,j))});save();closeSheet();render()}
+// Explicitly identify unverified Detachment/Stratagem data; do not claim exhaustive coverage.
+const appNotes='<p class="warning">커뮤니티 11판 데이터 참고 · 공식 업데이트에 따라 Points, 프로필, Detachment 및 Stratagem이 달라질 수 있습니다. 미검증 내용은 경기 전 확인하세요.</p>';
+const oldRulePage=rulePage;rulePage=function(){return oldRulePage()+appNotes};
+const oldDatasheet=datasheet;datasheet=function(i){let u=current().units[i];syncUnit(u);return oldDatasheet(i)};
+
+render();
+// Fresh v7: explicit per-datasheet loadout catalogue. Missing profiles are labelled, never fabricated.
+const EQUIP={
+ term:{base:['Storm bolter'],special:SPECIAL,melee:['Nemesis force weapon'],specialPer5:1,ancient:true,ancientSpecial:true,apothecary:true},
+ pal:{base:['Storm bolter'],special:SPECIAL,melee:['Nemesis force weapon'],specialPer5:2,ancient:true,ancientSpecial:true},
+ strike:{base:['Storm bolter'],special:SPECIAL,melee:['Nemesis force weapon','Close combat weapon'],specialPer5:1},
+ purifier:{base:['Storm bolter'],special:['Incinerator','Psycannon','Psilencer'],melee:['Nemesis force weapon','Close combat weapon'],specialPer5:2,bonus:['Purifying flame']},
+ interceptor:{base:['Storm bolter'],special:SPECIAL,melee:['Nemesis force weapon','Close combat weapon'],specialPer5:1},
+ purgation:{base:['Storm bolter'],special:SPECIAL,melee:['Nemesis force weapon','Close combat weapon'],specialPer5:4},
+ dread:{base:['Heavy psycannon','Heavy incinerator','Gatling psilencer'],special:[],melee:['Nemesis greatsword','Nemesis daemon greathammer','Dreadfists'],slots:2,optional:true},
+ gmdread:{base:['Heavy psycannon','Heavy incinerator','Gatling psilencer'],special:[],melee:['Nemesis greatsword','Nemesis daemon greathammer','Dreadfists'],slots:2,optional:true},
+ librarian:{base:['Storm bolter','Combi-weapon'],melee:['Nemesis force weapon'],bonus:['Vortex of Doom']},
+ crowe:{base:['Purifying flame'],melee:['Black Blade of Antwyr'],locked:true},
+ draigo:{base:['Storm bolter'],melee:['Titansword'],locked:true},
+ voldus:{base:['Storm bolter'],melee:['Malleus Argyrum'],locked:true},
+ champ:{base:['Storm bolter'],melee:['Nemesis force weapon'],locked:true},
+ grandmaster:{base:['Storm bolter','Psycannon','Incinerator','Psilencer'],melee:['Nemesis force weapon']},
+ brothercaptain:{base:['Storm bolter','Psycannon','Incinerator','Psilencer'],melee:['Nemesis force weapon']},
+ stern:{base:['Storm bolter'],melee:['Nemesis force weapon'],locked:true},
+ chaplain:{base:['Storm bolter'],melee:['Crozius arcanum'],locked:true},
+ techmarine:{base:['Bolt pistol','Flamer','Melta gun'],melee:['Omnissian power axe','Servo-arm'],bonus:['Servo-arm']},
+ ancient:{base:['Storm bolter','Psycannon','Psilencer','Incinerator'],melee:['Nemesis force weapon']},
+ ven:{base:['Assault cannon','Multi-melta','Twin lascannon','Heavy plasma cannon'],melee:['Dreadnought combat weapon','Missile launcher'],slots:2},
+ landraider:{base:['Twin lascannon','Twin heavy bolter','Storm bolter','Multi-melta'],melee:['Armoured tracks'],locked:true},
+ redeemer:{base:['Flamestorm cannon','Twin assault cannon','Storm bolter','Multi-melta'],melee:['Armoured tracks'],locked:true},
+ crusader:{base:['Hurricane bolter','Twin assault cannon','Storm bolter','Multi-melta'],melee:['Armoured tracks'],locked:true},
+ rhino:{base:['Storm bolter','Hunter-killer missile'],melee:['Armoured tracks'],locked:true},
+ razorback:{base:['Twin heavy bolter','Twin lascannon','Storm bolter','Hunter-killer missile'],melee:['Armoured tracks'],locked:true}
+};
+const PROFILE_EXTRA={
+ 'Nemesis greatsword':['Melee','5','3+','10','-2','3','Psychic','m'],
+ 'Nemesis daemon greathammer':['Melee','5','4+','14','-3','D6+1','Psychic','m'],
+ 'Dreadfists':['Melee','5','3+','8','-2','2','','m'],
+ 'Close combat weapon':['Melee','3','3+','4','0','1','','m'],
+ 'Armoured tracks':['Melee','3','4+','6','0','1','','m'],
+ 'Vortex of Doom':['18"','D6','3+','8','-2','2','Psychic','r'],
+ 'Purifying flame':['18"','D6','—','5','-1','1','Psychic, Torrent','r'],
+ 'Black Blade of Antwyr':['Melee','5','2+','6','-2','2','Psychic','m'],
+ 'Titansword':['Melee','6','2+','8','-3','3','Psychic','m'],
+ 'Malleus Argyrum':['Melee','5','2+','8','-2','3','Psychic','m'],
+ 'Crozius arcanum':['Melee','5','3+','6','-2','2','','m'],
+ 'Omnissian power axe':['Melee','3','3+','6','-2','2','','m'],
+ 'Servo-arm':['Melee','1','4+','8','-2','3','Extra Attacks','m'],
+ 'Combi-weapon':['24"','1','4+','4','0','1','Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1','r']
+};
+// Profile figures above are reference-only until checked against the latest official datasheet.
+Object.entries(PROFILE_EXTRA).forEach(([name,p])=>{if(!weapons[name])weapons[name]={en:name,range:p[0],a:p[1],skill:p[2],s:p[3],ap:p[4],d:p[5],keywords:p[6],kind:p[7],provisional:true}});
+Object.entries(EQUIP).forEach(([id,rule])=>{let d=catalog.gk.find(x=>x.id===id);if(d){d.weapons=[...new Set([...rule.base,...(rule.special||[]),...(rule.bonus||[])])];d.loadoutAvailable=true}});
+// Preserve v6 rosters; normalize unimplemented units to their correct baseline, never silently erase a valid selected weapon.
+function syncUnit(u){let e=EQUIP[u.id],r=RULESET[u.id];u.models=u.models||[];while(u.models.length<u.size)u.models.push(defaultModel(u.id,u.models.length));u.models.length=u.size;u.models.forEach((m,j)=>{if(!m.role)m.role=r?(j===0?r.leader:r.basic):(catalog.gk.find(x=>x.id===u.id)?.roles[j===0?0:1]||'Model');if(m.role==='Ancient')m.banner=true;if(m.role==='Apothecary')m.narthecium=true;if(r){m.role=j===0?r.leader:r.basic;if(j===0){m.banner=false;m.narthecium=false}}if(m.ranged==null)m.ranged=weaponEnglish(m.weapon||e?.base?.[0]||'Storm bolter');if(m.melee==null)m.melee=e?.melee?.[0]||'Nemesis force weapon';if(e&&!m.narthecium&&!(e.base||[]).concat(e.special||[]).includes(m.ranged))m.ranged=e.base[0];if(e&&!(e.melee||[]).includes(m.melee))m.melee=e.melee[0];if(m.narthecium){m.ranged="Apothecary's narthecium";m.banner=false}if(r&&r.heavyMelee)m.melee=SPECIAL.includes(m.ranged)?'Close combat weapon':'Nemesis force weapon';m.weapon=m.ranged});return u}
+function modelOptions(u,m,j){let e=EQUIP[u.id];if(m.narthecium)return ["Apothecary's narthecium"];if(!e)return ['Storm bolter'];if(e.locked)return [e.base[0]];if(j===0&&RULESET[u.id])return [e.base[0]];return [...new Set([...e.base,...(e.special||[])])];}
+function validateUnit(u){syncUnit(u);let e=EQUIP[u.id];if(!e)return '이 유닛의 무장 구성은 검증 대기';if(u.models.filter(m=>m.banner).length>1)return 'Ancient’s Banner는 분대당 1개까지';if(u.models.filter(m=>m.narthecium).length>1)return 'Apothecary’s narthecium은 분대당 1개까지';if(e.specialPer5){let ordinary=u.models.filter((m,j)=>j>0&&!m.banner&&!m.narthecium&&(e.special||[]).includes(m.ranged)).length;if(ordinary>Math.floor(u.size/5)*e.specialPer5)return `특수무장 수량 초과: 일반 모델은 5 models당 최대 ${e.specialPer5}개`;if(!e.ancientSpecial&&u.models.some(m=>m.banner&&(e.special||[]).includes(m.ranged)))return 'Ancient 특수무장 제한 확인 필요'}return ''}
+function modelRows(i){let u=syncUnit(current().units[i]),d=lookup(current(),u.id),e=EQUIP[u.id]||{};return u.models.map((m,j)=>{let opts=modelOptions(u,m,j),locked=!!e.locked||!!m.narthecium||(j===0&&!!RULESET[u.id]),r=RULESET[u.id];let toggles=r&&j>0?`<div class="row"><label>Ancient’s Banner</label><input style="width:23px" type="checkbox" ${m.banner?'checked':''} ${!r.ancient||m.narthecium?'disabled':''} onchange="toggleEquipment(${i},${j},'banner',this.checked)"></div><div class="row"><label>Apothecary’s narthecium</label><input style="width:23px" type="checkbox" ${m.narthecium?'checked':''} ${!r.apothecary||m.banner?'disabled':''} onchange="toggleEquipment(${i},${j},'narthecium',this.checked)"></div>`:'';let meleeLocked=!!e.locked||e.melee?.length===1||r?.heavyMelee;return `<details class="card model-editor" ${j===0?'open':''}><summary>${j+1}. ${esc(roleName(u,m,j))} <span class="pill">${esc(m.ranged)}</span></summary>${toggles}<label>Ranged Weapons ${locked?'🔒':''}</label>${locked?`<div class="fixedgear">🔒 ${esc(m.ranged)}</div>`:`<select onchange="setModel(${i},${j},'ranged',this.value)">${opts.map(w=>`<option value="${esc(w)}" ${m.ranged===w?'selected':''}>${esc(w)}</option>`).join('')}</select>`}<label>Melee Weapons ${meleeLocked?'🔒':''}</label>${meleeLocked?`<div class="fixedgear">🔒 ${esc(m.melee)}</div>`:`<select onchange="setModel(${i},${j},'melee',this.value)">${(e.melee||[]).map(w=>`<option ${m.melee===w?'selected':''} value="${esc(w)}">${esc(w)}</option>`).join('')}</select>`}${e.slots?'<p class="muted">이 Vehicle의 복수 무장 슬롯 및 선택 조합은 공식 Datasheet에서 추가 확인이 필요합니다.</p>':''}<button style="width:100%;margin-top:10px" onclick="modelWeaponInfo(${i},${j})">무기 Stats 보기</button></details>`}).join('')}
+function rerenderEditor(i){let sc=$('sheetContent'),top=sc.scrollTop,opened=[...sc.querySelectorAll('.model-editor')].map((x,j)=>x.open?j:-1).filter(x=>x>=0);$('models').innerHTML=modelRows(i);[...sc.querySelectorAll('.model-editor')].forEach((x,j)=>x.open=opened.includes(j));$('modelWarning').textContent=validateUnit(current().units[i])||'기본 편성 검사 통과 · 공식 제한 확인 권장';sc.scrollTop=top;save();render(false)}
+function setModel(i,j,k,v){let u=current().units[i];syncUnit(u);let m=u.models[j],e=EQUIP[u.id]||{};if(k==='ranged'){if(!modelOptions(u,m,j).includes(v))return;m.ranged=v;m.weapon=v;if(RULESET[u.id]?.heavyMelee)m.melee=SPECIAL.includes(v)?'Close combat weapon':'Nemesis force weapon'}else if(k==='melee'&&(e.melee||[]).includes(v)&&!e.locked&&!RULESET[u.id]?.heavyMelee){m.melee=v}else return;rerenderEditor(i)}
+function selectedWeapons(u,kind){syncUnit(u);let count={};u.models.forEach(m=>{let w=kind==='r'?m.ranged:m.melee;if(w&&weapons[w]?.kind===kind)count[w]=(count[w]||0)+1});let e=EQUIP[u.id];if(kind==='r')for(let w of e?.bonus||[])if(weapons[w]?.kind==='r')count[w]=(count[w]||0)+u.size;if(kind==='m')for(let w of e?.bonus||[])if(weapons[w]?.kind==='m')count[w]=(count[w]||0)+u.size;return Object.entries(count).map(([w,n])=>[w,n,weapons[w]])}
+function modelWeaponInfo(i,j){let u=syncUnit(current().units[i]),m=u.models[j],e=EQUIP[u.id]||{},r=weapons[m.ranged],w=weapons[m.melee];let extra=(e.bonus||[]).map(x=>weapons[x]?[x,1,weapons[x]]:null).filter(Boolean);openSheet(`<div class="row"><h2>${esc(roleName(u,m,j))} · Weapon Stats</h2><button onclick="editUnit(${i})">뒤로</button></div><h3>Ranged Weapons</h3>${weaponTable([...r&&r.kind==='r'?[[m.ranged,1,r]]:[],...extra.filter(x=>x[2].kind==='r')])}<h3>Melee Weapons</h3>${weaponTable([...w&&w.kind==='m'?[[m.melee,1,w]]:[],...extra.filter(x=>x[2].kind==='m')],true)}<p class="warning">일부 프로필은 참고용이며 공식 앱과 최종 대조가 필요합니다.</p>`)}
+// Correct the previous blanket Psycannon surcharge: only use verified per-unit point values.
+function unitCost(r,u){let d=lookup(r,u.id);return d?.points?.[u.size]??null}
+// All detachment pages now show six stratagem slots; unknown effects are never invented.
+const DET_RULES={argent:['Dauntless Champions','Paladin Squad가 Fight할 때 공격 S가 대상 T보다 낮으면 Wound Roll +1.'],immaterial:['Echojump','Interceptor Squad가 Shooting 후 조건을 충족하면 D6+1" Surge Move를 할 수 있습니다.'],brotherhood:['Fury of Titan','Deep Strike로 배치한 유닛은 해당 턴 Hit Roll 1과 Wound Roll 1 재굴림.'],hallowed:['Duty Before All','GREY KNIGHTS TERMINATOR 유닛은 Fall Back한 턴에도 Shoot와 Charge 가능.'],banishers:['Channelled Force','GREY KNIGHTS 유닛이 Fight하기 전 Leadership test 성공 시 Psychic Melee에 Sustained Hits 1 또는 Lethal Hits 선택.'],warpbane:['Hallowed Ground','Hallowed Ground 구역에서 효과를 받는 편성. 구역 판정은 공식 규칙 참조.'],fires:['Searing Soulflame','Purgation Squad 중심 화력 Detachment. 상세 조건 확인 필요.'],augurium:['Prescient Redeployment','예지 기반 재배치 Detachment. 상세 조건 확인 필요.'],sanctic:['Mailed Fist','Vehicle 중심 Detachment. 상세 조건 확인 필요.']};
+Object.entries(DET_RULES).forEach(([id,v])=>{let d=detachments.find(x=>x.id===id);if(d)d.detail=v[0]+' — '+v[1]});
+const STRAT_EXTRA={brotherhood:['Shining Veil'],hallowed:['Point-blank Purgation','Grind Them Underfoot'],argent:['Aura of Vengeance'],immaterial:['Blades from the Beyond','By Thought Alone','Responsive Displacement']};
+Object.entries(STRAT_EXTRA).forEach(([id,names])=>{let d=detachments.find(x=>x.id===id);if(!d)return;names.forEach(name=>{if(!d.strats.some(x=>x.name.toLowerCase()===name.toLowerCase()))d.strats.push({name,cp:name==='Aura of Vengeance'?1:1,phase:'공식 원문 확인',short:name==='Aura of Vengeance'?'적이 Paladin Squad를 Melee 공격할 때 그 공격에 Hazardous 부여':'조건 및 효과 확인 대기',detail:'최신 공식 Datasheet/Detachment 원문 확인 필요'})})});
+const _rulePageV7=rulePage;rulePage=function(){return `<div class="warning">규칙 참고 기준: 2026년 10월 · 공식 Faction Pack / MFM / 앱과 대조 필요. 아래 링크에서 원문 확인 가능</div><div class="card"><a href="https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/" target="_blank" rel="noopener">공식 Warhammer 40,000 Downloads</a></div>`+_rulePageV7()};
+
+/* v8: roster lifecycle + battle weapon usage reference. */
+function deleteRoster(i){
+ const r=rosters[i];if(!r)return;
+ if(!confirm('"'+r.name+'" 로스터를 완전히 삭제할까요?\n이 기기에서 삭제되며 백업하지 않았다면 복구할 수 없습니다.'))return;
+ rosters.splice(i,1);if(active>=rosters.length)active=Math.max(0,rosters.length-1);else if(i<active)active--;
+ page='home';save();render();
+}
+function rosterActions(i){
+ const r=rosters[i];if(!r)return;
+ openSheet(`<div class="row"><h2>로스터 관리</h2><button onclick="closeSheet()">닫기</button></div><div class="card"><b>${esc(r.name)}</b><p class="sub">${r.units.length}개 유닛 · ${r.limit} pts 한도</p></div><button class="primary" style="width:100%" onclick="active=${i};page='list';closeSheet();render()">로스터 열기</button><button class="danger" style="width:100%;margin-top:12px" onclick="closeSheet();deleteRoster(${i})">이 로스터 삭제</button><p class="warning">삭제 전에 규칙 탭에서 JSON 백업을 내보낼 수 있습니다.</p>`);
+}
+const _renderV8=render;
+render=function(updateSheet=true){
+ _renderV8(updateSheet);
+ if(page==='home'){
+  const cards=$('main').querySelectorAll('.card[onclick]');
+  cards.forEach((card,i)=>{if(i>=rosters.length)return;
+   const btn=document.createElement('button');btn.className='danger';btn.textContent='삭제';btn.style.marginTop='10px';
+   btn.onclick=e=>{e.stopPropagation();rosterActions(i)};card.appendChild(btn);
+  });
+ }
+};
+function weaponUseGuide(u){
+ const id=u.id, vehicle=['dread','gmdread','ven','landraider','redeemer','crusader','rhino','razorback'].includes(id);
+ const guns=selectedWeapons(u,'r');const melee=selectedWeapons(u,'m');
+ const hasPistol=guns.some(x=>/pistol/i.test(x[0])||/\bPistol\b/i.test(x[2]?.keywords||''));
+ const hasOther=guns.some(x=>!/\bPistol\b/i.test(x[2]?.keywords||'')&&!/pistol/i.test(x[0]));
+ let ranged=vehicle?'**Vehicle:** 기본적으로 장착한 모든 Ranged Weapons로 사격할 수 있습니다. 같은 무기의 수량이 2개면 각각 사격합니다. 단, 개별 무기·유닛 규칙에 제한이 있으면 우선 적용합니다.':'**Infantry / Character:** 일반적으로 장착한 모든 Ranged Weapons로 사격할 수 있습니다. 다만 Pistol과 Pistol이 아닌 무기를 동시에 쏘는 것은 제한됩니다.';
+ if(hasPistol&&hasOther&&!vehicle)ranged+=' 이 유닛에는 Pistol 계열과 다른 무기가 함께 표시되므로 **Pistol만 사용하거나, Pistol이 아닌 무기들을 사용**하는 쪽을 선택하세요.';
+ let meleeText='**Fight:** 한 모델은 일반적으로 보유한 Melee Weapons 중 **한 가지**를 선택해 공격합니다. 무기가 여러 개라도 Attacks를 합산하지 않습니다. **Extra Attacks** 무기는 선택한 주무기와 별도로 공격할 수 있습니다.';
+ const extra=melee.some(x=>/Extra Attacks/i.test(x[2]?.keywords||''));
+ if(extra)meleeText+=' 이 유닛의 무기 목록에는 **Extra Attacks**가 포함돼 있습니다.';
+ let extraNote='';
+ if(id==='dread'||id==='gmdread')extraNote='Dreadknight: 여러 Ranged Weapons를 장착했다면 각 무기를 발사할 수 있습니다. Melee는 Greatsword / Greathammer / Dreadfists 중 실제 장착·사용 가능한 한 가지를 선택합니다.';
+ if(id==='ven')extraNote='Dreadnought: 사격 무기와 Melee 무기는 서로 다른 용도입니다. Ranged Weapons가 여러 개라면 모두 사격할 수 있지만, 동일한 슬롯의 대체 무기를 동시에 보유한 것으로 계산하면 안 됩니다.';
+ if(id==='purifier')extraNote='Purifying flame 같은 별도 Ranged Weapon이 있다면 Storm bolter 등 다른 비-Pistol 무기와 함께 사용할 수 있습니다(별도 제한이 없는 경우).';
+ const fmt=t=>t.replace(/\*\*(.*?)\*\*/g,'<b>$1</b>');
+ return `<div class="card"><h3 style="margin:0 0 8px">한 턴 무기 사용 가이드</h3><p class="sub">현재 선택한 Wargear를 기준으로 읽는 Core Rules 요약입니다.</p><div class="fixedgear">🎯 <b>Shooting Phase</b><p>${fmt(ranged)}</p></div><div class="fixedgear" style="margin-top:8px">⚔️ <b>Fight Phase</b><p>${fmt(meleeText)}</p></div>${extraNote?`<p class="sub">${esc(extraNote)}</p>`:''}<p class="warning">중요: 같은 무기의 여러 프로필(예: Strike / Sweep)은 **하나를 선택**합니다. 한 무기에 여러 사격 모드가 있으면 해당 무기의 규칙에 따릅니다. 모델이 실제 장착한 무장만 사용 가능하며, 이 앱의 미검증 Wargear 슬롯은 공식 Datasheet를 우선하세요.</p></div>`;
+}
+const _datasheetV8=datasheet;
+datasheet=function(i){_datasheetV8(i);let r=current(),u=r?.units[i];if(!u)return;const el=$('sheetContent');if(el)el.insertAdjacentHTML('beforeend',weaponUseGuide(u));};
+
+
+/* v9: independent weapon slots for multi-weapon platforms; backward compatible. */
+const MULTI_RANGED={
+ dread:{max:2,choices:['Gatling psilencer','Heavy incinerator','Heavy psycannon'],unique:true},
+ gmdread:{max:2,choices:['Gatling psilencer','Heavy incinerator','Heavy psycannon'],unique:true},
+ ven:{max:2,choices:['Assault cannon','Multi-melta','Twin lascannon','Heavy plasma cannon','Missile launcher'],unique:false,notice:'Dreadnought의 무장별 교체·조합 제한은 공식 Datasheet에서 확인하세요.'},
+ techmarine:{max:2,choices:['Bolt pistol','Flamer','Melta gun'],unique:false,notice:'Techmarine의 기본/교체 무장은 Datasheet의 Wargear Options에 따라 확인하세요.'}
+};
+const _syncV9=syncUnit;
+syncUnit=function(u){_syncV9(u);let cfg=MULTI_RANGED[u.id];if(!cfg)return u;u.models.forEach(m=>{
+ if(!Array.isArray(m.rangedSlots)){
+  let old=m.ranged;
+  m.rangedSlots=cfg.choices.includes(old)?[old]:[];
+ }
+ m.rangedSlots=[...new Set(m.rangedSlots.filter(w=>cfg.choices.includes(w)))].slice(0,cfg.max);
+ m.ranged=m.rangedSlots[0]||'';m.weapon=m.ranged;
+});return u};
+function changeRangedSlot(i,j,slot,value){let u=syncUnit(current().units[i]),m=u.models[j],cfg=MULTI_RANGED[u.id];if(!cfg)return;
+ let slots=[...m.rangedSlots];if(value){if(!cfg.choices.includes(value))return;if(cfg.unique&&slots.some((w,k)=>k!==slot&&w===value)){alert('같은 Ranged Weapon을 중복 장착할 수 없습니다.');rerenderEditor(i);return;}slots[slot]=value;}else slots.splice(slot,1);
+ m.rangedSlots=slots.filter(Boolean).slice(0,cfg.max);m.ranged=m.rangedSlots[0]||'';m.weapon=m.ranged;rerenderEditor(i);
+}
+const _modelRowsV9=modelRows;
+modelRows=function(i){let u=syncUnit(current().units[i]),cfg=MULTI_RANGED[u.id];if(!cfg)return _modelRowsV9(i);
+ return u.models.map((m,j)=>{
+ let choices=cfg.choices,slots=m.rangedSlots||[],melee=EQUIP[u.id]?.melee||[];
+ let rows=Array.from({length:cfg.max},(_,k)=>`<label>Ranged Weapon ${k+1} ${k===0?'':'(선택)'}</label><select onchange="changeRangedSlot(${i},${j},${k},this.value)"><option value="">장착하지 않음</option>${choices.filter(w=>!cfg.unique||!slots.includes(w)||slots[k]===w).map(w=>`<option value="${esc(w)}" ${slots[k]===w?'selected':''}>${esc(w)}</option>`).join('')}</select>`).join('');
+ return `<details class="card model-editor" ${j===0?'open':''}><summary>${j+1}. ${esc(roleName(u,m,j))} <span class="pill">${slots.length}/${cfg.max} Ranged</span></summary><div class="warning">최대 ${cfg.max}개 ${cfg.unique?'· 동일 무장 중복 불가':''} · 장착한 Ranged Weapons는 사격 규칙에 따라 각각 사용 가능</div>${rows}<label>Melee Weapons</label>${melee.length>1?`<select onchange="setModel(${i},${j},'melee',this.value)">${melee.map(w=>`<option value="${esc(w)}" ${m.melee===w?'selected':''}>${esc(w)}</option>`).join('')}</select>`:`<div class="fixedgear">🔒 ${esc(m.melee)}</div>`}${cfg.notice?`<p class="warning">${esc(cfg.notice)}</p>`:''}<button style="width:100%;margin-top:10px" onclick="modelWeaponInfo(${i},${j})">장착한 모든 무기 Stats</button></details>`;
+ }).join('');
+};
+const _selectedWeaponsV9=selectedWeapons;
+selectedWeapons=function(u,kind){let cfg=MULTI_RANGED[u.id];if(!cfg||kind!=='r')return _selectedWeaponsV9(u,kind);syncUnit(u);let count={};u.models.forEach(m=>(m.rangedSlots||[]).forEach(w=>{if(weapons[w]?.kind==='r')count[w]=(count[w]||0)+1}));let e=EQUIP[u.id];(e?.bonus||[]).forEach(w=>{if(weapons[w]?.kind==='r')count[w]=(count[w]||0)+u.size});return Object.entries(count).map(([w,n])=>[w,n,weapons[w]])};
+const _modelWeaponInfoV9=modelWeaponInfo;
+modelWeaponInfo=function(i,j){let u=syncUnit(current().units[i]),cfg=MULTI_RANGED[u.id];if(!cfg)return _modelWeaponInfoV9(i,j);let m=u.models[j],e=EQUIP[u.id]||{};
+ let ranged=(m.rangedSlots||[]).filter(w=>weapons[w]?.kind==='r').map(w=>[w,1,weapons[w]]);
+ let melee=weapons[m.melee]?.kind==='m'?[[m.melee,1,weapons[m.melee]]]:[];
+ (e.bonus||[]).forEach(w=>{if(weapons[w]?.kind==='r')ranged.push([w,1,weapons[w]]);if(weapons[w]?.kind==='m')melee.push([w,1,weapons[w]])});
+ openSheet(`<div class="row"><h2>${esc(roleName(u,m,j))} · Weapon Stats</h2><button onclick="editUnit(${i})">뒤로</button></div><h3>Ranged Weapons · ${ranged.length}개</h3>${ranged.length?weaponTable(ranged):'<p class="muted">장착한 Ranged Weapon 없음</p>'}<h3>Melee Weapons</h3>${weaponTable(melee,true)}<p class="warning">무장 Stats 및 조합 제한은 최신 공식 Datasheet와 대조하세요.</p>`);
+};
+const _validateV9=validateUnit;
+validateUnit=function(u){let base=_validateV9(u),cfg=MULTI_RANGED[u.id];if(!cfg)return base;syncUnit(u);for(let m of u.models){if(m.rangedSlots.length>cfg.max)return `Ranged Weapons는 최대 ${cfg.max}개`;if(cfg.unique&&new Set(m.rangedSlots).size!==m.rangedSlots.length)return '동일 Ranged Weapon 중복 불가'}return base};
+// New 11th-edition Dreadknight loadouts, verified as 2 different ranged weapons.
+['dread','gmdread'].forEach(id=>{EQUIP[id].base=['Gatling psilencer','Heavy incinerator','Heavy psycannon'];EQUIP[id].slots=2;});
+// Ensure all three weapon options have a visible entry; do not invent a profile.
+if(!weapons['Gatling psilencer'])weapons['Gatling psilencer']={en:'Gatling psilencer',kind:'r',range:'24"',a:'12',skill:'3+',s:'6',ap:'0',d:'1',keywords:'Psychic, Sustained Hits 1',provisional:true};
+// Update legacy stored rosters in place, keeping old first ranged choice.
+rosters.forEach(r=>(r.units||[]).forEach(u=>{if(MULTI_RANGED[u.id])syncUnit(u)}));save();
+
+
+
+
+/* v10: roster leader attachment, active effects and ability reference. */
+const LEADER_TARGETS={crowe:['purifier'],librarian:['term','pal'],voldus:['term','pal'],draigo:['term','pal'],grandmaster:['term','pal'],brothercaptain:['term','pal'],stern:['term','pal'],chaplain:['term','pal'],champ:['strike'],techmarine:['strike','purifier','purgation','interceptor','term','pal']};
+const ABILITY_DATA={
+ purifier:[['Deep Strike','Reserves에서 Deep Strike로 배치','Core Rules의 거리와 Reinforcements 제한 적용'],['Sanctity of Purpose','Wound Roll 1 재굴림','이 유닛 모델의 공격에서 Wound Roll 1을 재굴림. 대상이 Objective Marker 범위 내라면 Wound Roll 전체 재굴림 가능']],
+ pal:[['Deep Strike','Deep Strike로 배치','Core Rules 적용'],['Attuned Onslaught (Psychic)','Charge한 턴에 Paladin의 Melee Damage +1','이 유닛이 Charge Move를 하면 그 턴 종료까지 PALADIN SQUAD 모델의 Melee Weapon Damage +1'],['Ancient’s Banner','Banner가 있다면 유닛 모델 OC +1','Banner 소유자가 포함된 유닛의 모든 모델 OC +1'],['Apothecary’s Narthecium','Command phase에 모델 1기 복귀','소유자가 생존해 있으면 파괴된 모델 1기(CHARACTERS 제외)를 복귀']],
+ term:[['Deep Strike','Deep Strike로 배치','Core Rules 적용'],['Force Edge (Psychic)','Monster/Vehicle 외 적에게 Melee AP 개선','해당 대상에 대한 Melee 공격의 AP를 1 개선'],['Ancient’s Banner','Banner가 있다면 유닛 모델 OC +1','Banner 소유자가 포함된 유닛의 모든 모델 OC +1'],['Apothecary’s Narthecium','Command phase에 모델 1기 복귀','소유자가 생존해 있으면 파괴된 모델 1기(CHARACTERS 제외)를 복귀']],
+ crowe:[['Champion of the Order of Purifiers (Psychic)','Leader일 때 유닛의 Purifying Flame A +1','Crowe가 Purifier Squad를 이끌고 있는 동안 해당 유닛 모델들이 장착한 Purifying Flame의 A +1'],['Foresight (Psychic)','CHARACTER 공격 시 Hit Roll 재굴림','Crowe가 CHARACTER 유닛을 공격하면 Hit Roll 재굴림 가능']],
+ strike:[['Deep Strike','Deep Strike로 배치','Core Rules 적용'],['Scouts 6"','Scouts 이동','게임 시작 전 Scouts 규칙에 따라 이동'],['Sanctifying Ritual (Psychic)','Objective 점유 유지','Command phase 종료 시 점유한 Objective에 적용되는 지속 점유 규칙']],
+ interceptor:[['Deep Strike','Deep Strike로 배치','Core Rules 적용'],['Personal Teleporters','Shooting 후 추가 기동','능력 발동 조건 및 이동 거리는 공식 Datasheet 확인']],
+ purgation:[['Deep Strike','Deep Strike로 배치','Core Rules 적용'],['Righteous Persecution','적을 Pin하는 능력','Pin 관련 세부 조건은 공식 Datasheet 확인']],
+ dread:[['Deep Strike','Deep Strike로 배치','Core Rules 적용']],gmdread:[['Deep Strike','Deep Strike로 배치','Core Rules 적용']]
+};
+for(const [id,entries] of Object.entries(ABILITY_DATA)){const d=catalog.gk.find(x=>x.id===id);if(d)d.abilities=entries.map(([name,short,detail])=>({name,short,detail}));}
+const pur=catalog.gk.find(x=>x.id==='purifier');if(pur)pur.stats={M:'6"',T:5,Sv:'2+',W:2,Ld:'6+',OC:1};
+const palV10=catalog.gk.find(x=>x.id==='pal');if(palV10)palV10.stats={M:'5"',T:6,Sv:'2+',W:3,Ld:'6+',OC:2,Inv:'4+'};
+const crowe=catalog.gk.find(x=>x.id==='crowe');if(crowe)crowe.stats={M:'6"',T:5,Sv:'2+',W:5,Ld:'6+',OC:1,Inv:'4+'};
+weapons['Purifying Flame']={en:'Purifying Flame',kind:'r',range:'18"',a:'1',skill:'3+',s:'4',ap:'-2',d:'1',keywords:'Anti-Infantry 2+, Ignores Cover, Psychic'};
+weapons['Purifying flame']={...weapons['Purifying Flame'],a:'3',skill:'2+'};
+weapons['Black Blade of Antwyr']={en:'Black Blade of Antwyr',kind:'m',range:'Melee',a:'5',skill:'2+',s:'6',ap:'-2',d:'2',keywords:'Devastating Wounds, Precision'};
+function leaderIndex(r,i){const u=r.units[i];return u?.attachedLeader==null?-1:r.units.findIndex(x=>x.uid===u.attachedLeader)}
+function unitUid(u){if(!u.uid)u.uid='unit_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,9);return u.uid}
+function leaderCandidates(r,i){const u=r.units[i];return r.units.map((x,j)=>({x,j})).filter(({x,j})=>j!==i&&(LEADER_TARGETS[x.id]||[]).includes(u.id)&&!r.units.some((y,k)=>k!==i&&y.attachedLeader===unitUid(x)))}
+function attachLeader(i,uid){const r=current(),u=r.units[i];if(!u)return;const candidate=r.units.find(x=>x.uid===uid);if(uid&&(!candidate||!(LEADER_TARGETS[candidate.id]||[]).includes(u.id))){alert('이 유닛에 배치할 수 없는 Leader입니다.');return;}u.attachedLeader=uid||null;save();editUnit(i)}
+function leaderPanel(i){const r=current(),u=r.units[i];unitUid(u);const options=leaderCandidates(r,i),li=leaderIndex(r,i),lead=li>=0?r.units[li]:null;return `<div class="card"><h3>Leader / Attached Unit</h3><p class="muted">로스터에 Character를 별도 추가한 뒤 여기서 연결합니다. Points는 중복 계산하지 않습니다.</p><select onchange="attachLeader(${i},this.value)"><option value="">Leader 없음</option>${lead&&!options.some(x=>x.x.uid===lead.uid)?`<option value="${esc(lead.uid)}" selected>${esc(lookup(r,lead.id)?.ko||lead.id)}</option>`:''}${options.map(({x})=>`<option value="${esc(unitUid(x))}" ${u.attachedLeader===x.uid?'selected':''}>${esc(lookup(r,x.id)?.ko||x.id)}</option>`).join('')}</select>${lead?`<div class="leaderline">연결됨: ${esc(lookup(r,lead.id)?.ko||lead.id)}<br><small>Leader 모델은 별도 Stats로 표시됩니다.</small></div>`:''}</div>`}
+const _addV10=addUnit;addUnit=function(id){_addV10(id);const r=current();if(r?.units?.length){unitUid(r.units[r.units.length-1]);save();}};
+const _editV10=editUnit;editUnit=function(i){_editV10(i);const el=document.getElementById('sheetContent');if(el)el.insertAdjacentHTML('afterbegin',leaderPanel(i));};
+function activeEffects(r,u){const li=leaderIndex(r,r.units.indexOf(u)),leader=li>=0?r.units[li]:null;const banner=['term','pal'].includes(u.id)&&(u.models||[]).some(m=>m.role==='Ancient');return {banner,leader,crowe:leader?.id==='crowe'&&u.id==='purifier'};}
+function boostedStat(label,value,changed,source){return `<div class="stat">${label}<b class="${changed?'boosted':''}">${esc(value)}</b>${changed?`<small class="boosted">${esc(source)}</small>`:''}</div>`}
+function effectProfile(r,u,d){const fx=activeEffects(r,u),stats=d.stats||{};const baseOC=Number(stats.OC);const newOC=Number.isFinite(baseOC)?baseOC+(fx.banner?1:0):'—';let cells=['M','T','Sv','W','Ld','OC','Inv'].map(k=>boostedStat(k==='Inv'?'InvSv':k,k==='OC'?newOC:(stats[k]??'—'),k==='OC'&&fx.banner,'Banner +1')).join('');let extra='';if(fx.banner)extra+=`<div class="ability-chip"><b>Ancient’s Banner 발동</b><div>분대 모든 모델 OC ${esc(baseOC)} → <span class="boosted">${esc(newOC)}</span> (Ancient 포함)</div></div>`;if(fx.crowe)extra+=`<div class="ability-chip"><b>Champion of the Order of Purifiers 발동</b><div>Purifier Squad의 Purifying Flame A 1 → <span class="boosted">2</span>. Crowe 본인도 Purifying Flame A 3 → <span class="boosted">4</span>.</div></div>`;return `<div class="card"><h3>적용된 Unit Stats</h3><div class="statgrid">${cells}</div>${extra||'<p class="muted">현재 자동 적용되는 Stats 변경 없음</p>'}</div>`}
+function flameTable(r,u){const fx=activeEffects(r,u);if(u.id!=='purifier')return '';const a=fx.crowe?2:1;return `<div class="card"><h3>Purifying Flame · 전원 고정 무장</h3><table class="small-table"><thead><tr><th>모델</th><th>Range</th><th>A</th><th>BS</th><th>S</th><th>AP</th><th>D</th></tr></thead><tbody><tr><td>Purifier ×${u.size}</td><td>18"</td><td class="${fx.crowe?'boosted':''}">${a}</td><td>3+</td><td>4</td><td>-2</td><td>1</td></tr>${fx.crowe?'<tr><td>Crowe ×1</td><td>18"</td><td class="boosted">4</td><td>2+</td><td>4</td><td>-2</td><td>1</td></tr>':''}</tbody></table><p class="muted">Anti-Infantry 2+, Ignores Cover, Psychic. <span class="boosted">빨간색</span>은 Leader Ability가 적용된 수치.</p></div>`}
+function abilityCards(r,u,d){let fx=activeEffects(r,u);let all=[...(d.abilities||[])];if(fx.leader){const ld=lookup(r,fx.leader.id);all.push(...(ld?.abilities||[]).map(a=>({...a,name:'[Leader] '+a.name})));}return `<div class="card"><h3>Abilities · ${all.length}개</h3>${all.length?all.map(a=>`<details><summary><b>${esc(a.name)}</b><div class="sub">${esc(a.short)}</div></summary><p>${esc(a.detail)}</p></details>`).join(''):'<p class="muted">Ability 상세 데이터 검증 대기</p>'}</div>`}
+const _dataV10=datasheet;datasheet=function(i){_dataV10(i);const r=current(),u=r?.units[i],d=u&&lookup(r,u.id);if(!d)return;const el=document.getElementById('sheetContent');if(!el)return;const li=leaderIndex(r,i),lead=li>=0?r.units[li]:null;let leaderCard=lead?`<div class="leaderline"><b>Attached Leader: ${esc(lookup(r,lead.id)?.ko||lead.id)}</b><p class="muted">Leader는 별도 모델이며 자신의 T, Sv, W, OC를 사용합니다. 분대와 Leader의 Stats를 하나의 값으로 합치지 않습니다.</p><button onclick="datasheet(${li})">Leader Datasheet 확인</button></div>`:'';el.insertAdjacentHTML('afterbegin',leaderCard+effectProfile(r,u,d)+flameTable(r,u));el.insertAdjacentHTML('beforeend',abilityCards(r,u,d));};
+const _renderV10=render;render=function(updateSheet=true){_renderV10(updateSheet);if(page==='list'){const r=current();if(!r)return;const cards=[...document.querySelectorAll('#main .card')];r.units.forEach((u,i)=>{const li=leaderIndex(r,i);if(li<0)return;const d=lookup(r,r.units[li].id);const b=document.createElement('div');b.className='leaderline';b.textContent='Leader: '+(d?.ko||r.units[li].id);const buttons=[...document.querySelectorAll('#main button')].filter(x=>x.getAttribute('onclick')===`editUnit(${i})`);if(buttons[0])buttons[0].closest('.card')?.appendChild(b);});}};
+rosters.forEach(r=>(r.units||[]).forEach(unitUid));save();
+
+// v11: model-level Wargear effects; use equipment flags, not the normalized role label.
+activeEffects=function(r,u){const li=leaderIndex(r,r.units.indexOf(u)),leader=li>=0?r.units[li]:null;const banner=['term','pal'].includes(u.id)&&(u.models||[]).some(m=>m.banner===true||m.role==='Ancient');return {banner,leader,crowe:leader?.id==='crowe'&&u.id==='purifier'};};
+function modelStatPanel(r,u,d){
+ const fx=activeEffects(r,u),base=Number(d.stats?.OC);
+ if(!Number.isFinite(base)||!u.models?.length)return '';
+ const oc=base+(fx.banner?1:0);
+ return `<div class="card"><h3>모델별 Stats · Wargear 효과 적용</h3><p class="muted">빨간색은 모델 Wargear / Ability로 변경된 수치입니다. Ancient’s Banner 소유 모델이 살아 있는 동안 적용됩니다.</p><div style="overflow-x:auto"><table class="small-table"><thead><tr><th>모델</th><th>M</th><th>T</th><th>Sv</th><th>W</th><th>Ld</th><th>OC</th></tr></thead><tbody>${u.models.map((m,j)=>`<tr><td>${esc(j+1+'. '+roleName(u,m,j))}${m.banner?' 🏳':''}${m.narthecium?' ✚':''}</td><td>${esc(d.stats.M??'—')}</td><td>${esc(d.stats.T??'—')}</td><td>${esc(d.stats.Sv??'—')}</td><td>${esc(d.stats.W??'—')}</td><td>${esc(d.stats.Ld??'—')}</td><td class="${fx.banner?'boosted':''}">${oc}${fx.banner?' (+1)':''}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+const _datasheetV11=datasheet;
+datasheet=function(i){_datasheetV11(i);const r=current(),u=r?.units[i],d=u&&lookup(r,u.id),el=document.getElementById('sheetContent');if(!u||!d||!el)return;const panel=modelStatPanel(r,u,d);const effects=el.querySelector('.card');if(effects)effects.insertAdjacentHTML('afterend',panel);else el.insertAdjacentHTML('afterbegin',panel);};
+// Avoid the old role-normalization trap when showing an Ancient's Banner.
+const _syncUnitV11=syncUnit;
+syncUnit=function(u){_syncUnitV11(u);if(['term','pal'].includes(u.id)){u.models.forEach(m=>{if(m.role==='Ancient')m.banner=true;});}return u;};
+
+
+// v12: weapon profile corrections and attached-character weapon cards.
+weapons['Nemesis force weapon']={en:'Nemesis force weapon',kind:'m',range:'Melee',a:'3',skill:'3+',s:'6',ap:'-2',d:'2',keywords:'Psychic'};
+weapons['Black Blade of Antwyr']={en:'Black Blade of Antwyr',kind:'m',range:'Melee',a:'5',skill:'2+',s:'6',ap:'-2',d:'2',keywords:'Devastating Wounds, Precision'};
+// Keep character weapons distinct: no squad profile or modifier is inherited automatically.
+const V12_LEADER_LOADOUT={
+ crowe:{r:[['Purifying flame',{kind:'r',range:'18"',a:'3',skill:'2+',s:'4',ap:'-2',d:'1',keywords:'Anti-Infantry 2+, Ignores Cover, Psychic'}],['Storm bolter',{kind:'r',range:'24"',a:'2',skill:'2+',s:'5',ap:'-1',d:'1',keywords:'Rapid Fire 2'}]],m:[['Black Blade of Antwyr',weapons['Black Blade of Antwyr']]]}
+};
+function v12WeaponRows(u,kind){
+ const counts=new Map();
+ for(const m of (u.models||[])){
+   const ws=kind==='r'?[m.ranged,...(Array.isArray(m.rangedSlots)?m.rangedSlots:[])]:[m.melee];
+   for(const name of ws)if(name&&weapons[name]?.kind===kind)counts.set(name,(counts.get(name)||0)+1);
+ }
+ const e=EQUIP[u.id];for(const name of e?.bonus||[])if(weapons[name]?.kind===kind)counts.set(name,(counts.get(name)||0)+u.size);
+ return [...counts].map(([name,count])=>[name,count,weapons[name]]);
+}
+function v12LeaderWeapons(r,u,kind){
+ const li=leaderIndex(r,r.units.indexOf(u));if(li<0)return null;
+ const l=r.units[li],d=lookup(r,l.id),known=V12_LEADER_LOADOUT[l.id];
+ let rows=known?known[kind].map(([name,profile])=>[name,1,profile]):v12WeaponRows(l,kind);
+ return {li,name:d?.ko||l.id,rows};
+}
+function v12CombinedWeapons(r,u){
+ const lead=v12LeaderWeapons(r,u,'r');if(!lead)return '';
+ const lr=v12LeaderWeapons(r,u,'m');
+ // A +1 from Crowe applies to Purifying flame only, never Nemesis force weapon.
+ const ranged=lead.rows.map(([name,n,w])=>[name,n,name.toLowerCase()==='purifying flame'&&lead.li>=0&&r.units[lead.li].id==='crowe'&&u.id==='purifier'?{...w,a:String(Number(w.a)+1)}:w]);
+ return `<div class="card"><h3>Attached Leader · 별도 무장 Stats</h3><p class="muted">${esc(lead.name)}의 무장은 분대 무장과 분리해 표시합니다. Leader의 BS/WS와 A를 그대로 사용하며, 적용되는 Ability만 빨간색으로 표시합니다.</p><h4>Leader Ranged Weapons</h4>${weaponTable(ranged)}<h4>Leader Melee Weapons</h4>${weaponTable(lr.rows,true)}</div>`;
+}
+const _datasheetV12=datasheet;
+datasheet=function(i){_datasheetV12(i);const r=current(),u=r?.units[i],el=document.getElementById('sheetContent');if(!u||!el)return;
+ // Replace old squad weapon tables with current per-weapon base profiles (no blanket attack buffs).
+ const pr=el.querySelector('#weaponPaneR'),pm=el.querySelector('#weaponPaneM');
+ if(pr)pr.innerHTML=weaponTable(v12WeaponRows(u,'r'));
+ if(pm)pm.innerHTML=weaponTable(v12WeaponRows(u,'m'),true);
+ const card=v12CombinedWeapons(r,u);if(card)el.insertAdjacentHTML('beforeend',card);
+};
+// Correct the older global weapon table that could retain the obsolete A4 value.
+
+
+// v13: single, effect-aware weapon table per tab. Never show a second weapon summary.
+function v13Rows(r,u,kind){
+ const fx=activeEffects(r,u), out=[];
+ const squad=v12WeaponRows(u,kind);
+ for(const [name,count,raw] of squad){
+  if(!raw)continue;
+  let w={...raw},boost=false;
+  // Weapon profile belongs to the unit, not the global weapon name.
+  if(name==='Nemesis force weapon' && kind==='m' && ['term','pal'].includes(u.id))w.a='4';
+  if(name.toLowerCase()==='purifying flame' && kind==='r' && u.id==='purifier' && fx.crowe){w.a=String(Number(w.a)+1);boost=true;}
+  out.push({owner:'분대',name,count,w,boost});
+ }
+ const leader=v12LeaderWeapons(r,u,kind);
+ if(leader){
+  for(const [name,count,raw] of leader.rows){
+   if(!raw)continue;
+   let w={...raw},boost=false;
+   if(name.toLowerCase()==='purifying flame' && kind==='r' && fx.crowe){w.a=String(Number(w.a)+1);boost=true;}
+   out.push({owner:leader.name+' (Leader)',name,count,w,boost});
+  }
+ }
+ return out;
+}
+function v13Table(r,u,kind){
+ const rows=v13Rows(r,u,kind);if(!rows.length)return '<p class="sub">선택된 무기가 없습니다.</p>';
+ return `<div class="weapontable"><table><thead><tr><th>사용 모델</th><th>Weapon</th><th>Range</th><th>A</th><th>${kind==='m'?'WS':'BS'}</th><th>S</th><th>AP</th><th>D</th><th>Keywords</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(x.owner)}</td><td>${esc(x.name)}${x.count>1?' ×'+x.count:''}</td><td>${esc(x.w.range)}</td><td class="${x.boost?'boosted':''}">${esc(x.w.a)}</td><td>${esc(x.w.skill)}</td><td>${esc(x.w.s)}</td><td>${esc(x.w.ap)}</td><td>${esc(x.w.d)}</td><td>${esc(x.w.keywords)}</td></tr>`).join('')}</tbody></table></div><p class="muted">${rows.some(x=>x.boost)?'<span class="boosted">빨간색</span>: 적용된 Ability에 따른 변경 수치 · ':''}Leader는 자신의 무기 프로필을 사용합니다.</p>`;
+}
+const _datasheetV13=datasheet;
+datasheet=function(i){
+ _datasheetV13(i);
+ const r=current(),u=r?.units[i],el=document.getElementById('sheetContent');if(!u||!el)return;
+ // Remove legacy duplicate effect panels and leader-only weapon panels.
+ for(const card of [...el.querySelectorAll('.card')]){
+  const h=card.querySelector('h3');
+  if(h&&(/Purifying Flame · 전원 고정 무장|Attached Leader · 별도 무장 Stats|적용된 Unit Stats/.test(h.textContent)))card.remove();
+ }
+ const pr=el.querySelector('#weaponPaneR'),pm=el.querySelector('#weaponPaneM');
+ if(pr)pr.innerHTML=v13Table(r,u,'r');
+ if(pm)pm.innerHTML=v13Table(r,u,'m');
+ // Keep a single compact applied-effect note instead of another stats card.
+ const fx=activeEffects(r,u);
+ const note=[];
+ if(fx.crowe)note.push('Crowe: Purifying Flame A +1 (분대 및 Crowe)');
+ if(fx.banner)note.push('Ancient’s Banner: 유닛 모델 OC +1');
+ if(note.length){const host=el.querySelector('.tabs')?.closest('.card');if(host)host.insertAdjacentHTML('beforeend',`<p class="muted" style="margin-top:12px">적용 중: ${note.map(esc).join(' · ')}</p>`);}
+};
+
+// v14 audited 11th edition weapon profiles (source: current GK datasheets, 2026-10-26).
+// Do not infer a weapon profile from its name across all units.
+const V14_VERIFIED={
+ 'Purifying flame':{range:'18"',a:'1',skill:'3+',s:'4',ap:'-2',d:'1',keywords:'Anti-Infantry 2+, Ignores Cover, Psychic',kind:'r'},
+ 'Storm bolter':{range:'24"',a:'2',skill:'3+',s:'5',ap:'-1',d:'1',keywords:'Rapid Fire 2',kind:'r'},
+ 'Psycannon':{range:'24"',a:'3',skill:'3+',s:'8',ap:'-1',d:'2',keywords:'Psychic',kind:'r'},
+ 'Incinerator':{range:'12"',a:'D6',skill:'—',s:'6',ap:'-1',d:'1',keywords:'Torrent, Ignores Cover',kind:'r'},
+ 'Psilencer':{range:'24"',a:'6',skill:'3+',s:'5',ap:'0',d:'1',keywords:'Precision, Psychic, Sustained Hits 1',kind:'r'},
+ 'Nemesis force weapon':{range:'Melee',a:'3',skill:'3+',s:'6',ap:'-2',d:'2',keywords:'Psychic',kind:'m'},
+ 'Close combat weapon':{range:'Melee',a:'3',skill:'3+',s:'5',ap:'0',d:'1',keywords:'',kind:'m'},
+ 'Black Blade of Antwyr':{range:'Melee',a:'5',skill:'2+',s:'6',ap:'-2',d:'2',keywords:'Devastating Wounds, Precision',kind:'m'}
+};
+for(const [name,w] of Object.entries(V14_VERIFIED))weapons[name]={...weapons[name],...w,en:name,unverified:false};
+// The global profile is a fallback. A different unit's attacks/skill must never leak into a squad.
+const V14_UNIT_OVERRIDES={
+ purifier:{'Purifying flame':{a:'1',skill:'3+'},'Nemesis force weapon':{a:'3',skill:'3+'},'Close combat weapon':{s:'5'}},
+ purgation:{'Storm bolter':{skill:'3+'},'Nemesis force weapon':{a:'3'},'Close combat weapon':{s:'5'}},
+ interceptor:{'Nemesis force weapon':{a:'3'},'Close combat weapon':{s:'5'}},
+ term:{'Nemesis force weapon':{a:'4'}},pal:{'Nemesis force weapon':{a:'4'}}
+};
+const V14_LEADER_OVERRIDES={
+ crowe:{'Purifying flame':{a:'3',skill:'2+'},'Storm bolter':{skill:'2+'},'Black Blade of Antwyr':{a:'5',skill:'2+'}},
+ champ:{'Nemesis force weapon':{a:'5',skill:'2+',keywords:'Precision, Psychic'}}
+};
+function v14Profile(ownerId,name,raw,isLeader){
+ const base=V14_VERIFIED[name]||{};
+ const changes=(isLeader?V14_LEADER_OVERRIDES:V14_UNIT_OVERRIDES)[ownerId]?.[name]||{};
+ return {...raw,...base,...changes};
+}
+function v14Rows(r,u,kind){
+ const fx=activeEffects(r,u),out=[];
+ for(const [name,count,raw] of v12WeaponRows(u,kind)){
+  if(!raw)continue;
+  const w=v14Profile(u.id,name,raw,false);
+  let boost=false;
+  if(u.id==='purifier'&&name.toLowerCase()==='purifying flame'&&fx.crowe){w.a=String(Number(w.a)+1);boost=true;}
+  out.push({owner:'분대',name,count,w,boost,verified:!!V14_VERIFIED[name]});
+ }
+ const leader=v12LeaderWeapons(r,u,kind);
+ if(leader){const lid=r.units[leader.li]?.id;
+  for(const [name,count,raw] of leader.rows){
+   if(!raw)continue;
+   const w=v14Profile(lid,name,raw,true);
+   let boost=false;
+   if(lid==='crowe'&&u.id==='purifier'&&name.toLowerCase()==='purifying flame'){w.a=String(Number(w.a)+1);boost=true;}
+   out.push({owner:leader.name+' (Leader)',name,count,w,boost,verified:!!V14_VERIFIED[name]});
+  }
+ }
+ return out;
+}
+// Replace v13Rows, so all weapon tabs share the same source of truth.
+v13Rows=v14Rows;
+// Clear stale cached markup produced by earlier versions, including the old D6 Torrent flame.
+const _datasheetV14=datasheet;
+datasheet=function(i){_datasheetV14(i);const r=current(),u=r?.units[i],el=document.getElementById('sheetContent');if(!r||!u||!el)return;
+ const pr=el.querySelector('#weaponPaneR'),pm=el.querySelector('#weaponPaneM');
+ if(pr)pr.innerHTML=v13Table(r,u,'r');if(pm)pm.innerHTML=v13Table(r,u,'m');
+ const host=(pr||pm)?.closest('.card');
+ if(host){const p=document.createElement('p');p.className='muted';p.style.marginTop='8px';p.textContent='검증된 무장 프로필은 11판 Datasheet 기준입니다. 나머지 무장·유닛별 예외는 검증 중이며 실제 게임에서는 공식 앱을 우선하세요.';host.appendChild(p);}
+};
+
+
+// v15: ensure Leader attachment remains discoverable after editor refreshes.
+const _v15Edit=editUnit;
+editUnit=function(i){
+ _v15Edit(i);
+ const panel=document.getElementById('sheetContent');if(!panel)return;
+ // Older saved sheets can be reopened scrolled to the bottom; always start at the controls.
+ panel.scrollTop=0;
+ let existing=panel.querySelector('#leaderAttachV15');
+ if(existing)existing.remove();
+ // Remove earlier duplicate leader panels, if present.
+ [...panel.querySelectorAll('.card')].forEach(c=>{if(c.querySelector('h3')?.textContent?.trim()==='Leader / Attached Unit')c.remove();});
+ const r=current(),u=r?.units[i];if(!u)return;
+ const d=lookup(r,u.id);
+ const eligible=Object.entries(LEADER_TARGETS).some(([id,targets])=>targets.includes(u.id));
+ if(!eligible)return;
+ const wrap=document.createElement('div');wrap.id='leaderAttachV15';
+ wrap.innerHTML=leaderPanel(i);
+ const anchor=panel.querySelector('#models');
+ if(anchor)anchor.before(wrap);else panel.insertAdjacentElement('afterbegin',wrap);
+};
+// Prevent detached/deleted leaders from leaving invisible stale links.
+const _v15Remove=removeUnit;
+removeUnit=function(i){
+ const r=current(),u=r?.units[i];if(!r||!u)return;
+ if(!confirm('유닛을 삭제할까요?'))return;
+ const uid=u.uid;
+ r.units.splice(i,1);
+ if(uid)r.units.forEach(x=>{if(x.attachedLeader===uid)x.attachedLeader=null;});
+ save();closeSheet();render();
+};
+
+
+// v16: Leader controls are a permanent part of the unit editor, not an optional injected card.
+function leaderControlV16(i){
+ const r=current(),u=r?.units?.[i];if(!u)return '';
+ r.units.forEach(unitUid);
+ const allowed=Object.entries(LEADER_TARGETS).some(([,targets])=>targets.includes(u.id));
+ const choices=leaderCandidates(r,i),linked=leaderIndex(r,i),leader=linked>=0?r.units[linked]:null;
+ const options=choices.map(({x})=>`<option value="${esc(x.uid)}" ${u.attachedLeader===x.uid?'selected':''}>${esc(lookup(r,x.id)?.ko||x.id)}</option>`).join('');
+ const selectedMissing=leader&&!choices.some(({x})=>x.uid===leader.uid)?`<option value="${esc(leader.uid)}" selected>${esc(lookup(r,leader.id)?.ko||leader.id)}</option>`:'';
+ return `<div class="card" id="leaderControlV16" style="border:2px solid #2374d2;margin:14px 0"><h3>Leader / Attached Unit</h3><p class="muted">Character를 로스터에 별도 추가한 다음 여기서 분대에 연결합니다.</p><label>분대 Leader 선택</label><select id="leaderSelectV16" onchange="attachLeaderV16(${i},this.value)"><option value="">Leader 없음</option>${selectedMissing}${options}</select>${!allowed?'<p class="muted">이 유닛은 현재 등록된 Leader 연결 대상이 아닙니다.</p>':!choices.length&&!leader?'<p class="muted">연결 가능한 Character가 로스터에 없습니다. 유닛 추가에서 Character를 먼저 추가하세요.</p>':''}${leader?`<p class="leaderline">현재 Leader: ${esc(lookup(r,leader.id)?.ko||leader.id)}</p>`:''}</div>`;
+}
+function attachLeaderV16(i,uid){
+ const r=current(),u=r?.units?.[i];if(!u)return;
+ r.units.forEach(unitUid);
+ const leader=r.units.find(x=>x.uid===uid);
+ if(uid&&(!leader||!(LEADER_TARGETS[leader.id]||[]).includes(u.id))){alert('이 분대에 연결할 수 없는 Leader입니다.');return;}
+ u.attachedLeader=uid||null;save();editUnit(i);
+}
+const _editorBeforeV16=editUnit;
+editUnit=function(i){
+ _editorBeforeV16(i);
+ const panel=document.getElementById('sheetContent');if(!panel)return;
+ panel.querySelectorAll('#leaderAttachV15,#leaderControlV16').forEach(x=>x.remove());
+ [...panel.querySelectorAll('.card')].forEach(c=>{if(c.querySelector('h3')?.textContent?.trim()==='Leader / Attached Unit')c.remove();});
+ const anchor=panel.querySelector('#models');
+ const wrap=document.createElement('div');wrap.innerHTML=leaderControlV16(i);
+ if(anchor)anchor.before(wrap);else panel.appendChild(wrap);
+ const overlay=document.getElementById('overlay');if(overlay)overlay.scrollTop=0;
+};
+// Expose a direct Leader button beside the squad's editor, so it cannot be missed.
+const _renderBeforeV16=render;
+render=function(...args){
+ _renderBeforeV16(...args);
+ if(page!=='list')return;
+ document.querySelectorAll('#main button[onclick^="editUnit("]').forEach(button=>{
+  const match=button.getAttribute('onclick').match(/^editUnit\((\d+)\)$/);if(!match)return;
+  const i=Number(match[1]),r=current(),u=r?.units?.[i];if(!u)return;
+  const card=button.closest('.card');if(!card||card.querySelector('.leaderShortcutV16'))return;
+  const shortcut=document.createElement('button');shortcut.className='leaderShortcutV16';shortcut.textContent='Leader 선택';shortcut.style.marginLeft='6px';shortcut.onclick=()=>editUnit(i);button.insertAdjacentElement('afterend',shortcut);
+ });
+};
+render();
+
+
+/* v18: verified point tiers and readable rules; preserve leader/model machinery. */
+const GK_POINTS_202610={
+ term:{5:185,10:380},strike:{5:125,10:250},
+ pal:{4:185,5:230,8:385,10:490},purifier:{5:145,10:290},
+ interceptor:{5:135,10:270},purgation:{5:115,10:230},
+ dread:{1:205},gmdread:{1:210},
+ crowe:{1:105},librarian:{1:95},champ:{1:75},
+ captain:{1:100},chaplain:{1:70},techmarine:{1:75},
+ gm:{1:100},voldus:{1:130}
+};
+// MFM uses separate points for additional instances or alternative unit configurations.
+// These first-instance prices are explicitly scoped, never silently applied to all instances.
+const GK_COST_NOTE={pal:'Paladin은 4/5/8/10 models의 별도 비용 구간 및 같은 Datasheet 반복 편성 시 다른 비용이 존재합니다.',purifier:'Purifier는 편성 수 및 옵션에 따라 추가 Points 구간이 존재합니다.',interceptor:'Interceptor는 편성 수 및 옵션에 따라 추가 Points 구간이 존재합니다.',purgation:'Purgation은 편성 수 및 옵션에 따라 추가 Points 구간이 존재합니다.',dread:'Nemesis Dreadknight는 편성 수 및 옵션에 따라 추가 Points 구간이 존재합니다.',gmdread:'Grand Master in Nemesis Dreadknight는 편성 수 및 옵션에 따라 추가 Points 구간이 존재합니다.',librarian:'Librarian은 편성 조건에 따라 다른 Points 구간이 존재합니다.'};
+for(const d of catalog.gk){if(GK_POINTS_202610[d.id]){d.points={...(d.points||{}),...GK_POINTS_202610[d.id]};d.pointNote=GK_COST_NOTE[d.id]||'기본 유닛 Points + 공식 Upgrade Points: Psycannon(대상 유닛) +5, Heavy psycannon(Dreadknight) +15 등. 표시된 비용만 자동 합산합니다.';}}
+// No arbitrary +5 per psycannon: prices must come from a verified official upgrade entry.
+// 11th edition MFM upgrade costs checked against faction datasheets, 26 Oct 2026.
+// Only explicitly priced upgrades are listed. Unlisted wargear does not receive an invented surcharge.
+// 2026-10-14 Grey Knights 11e MFM: every explicitly priced weapon option in faction datasheets.
+// These are the seven distinct unit/weapon pairs. Other legal weapon swaps have no listed surcharge.
+const UPGRADE_POINTS_202610={
+ 'term|Psycannon':5,
+ 'pal|Psycannon':5,
+ 'purgation|Psycannon':5,
+ 'dread|Heavy psycannon':15,
+ 'gmdread|Heavy psycannon':15,
+ 'gmdread|Sublimator':15,
+ 'stormraven|Hurricane bolter':10
+};
+function rosterUpgradeCost(u){let sum=0;for(const m of u.models||[]){for(const key of ['ranged','melee','ranged2','melee2']){let w=m[key];if(!w)continue;let price=UPGRADE_POINTS_202610[u.id+'|'+w]??UPGRADE_POINTS_202610[u.id+'|'+m.role+'|'+w];if(Number.isFinite(price))sum+=price;}}return sum;}
+
+// Pricing audit: the Stormraven upgrade is per Hurricane bolter (up to 2).
+// Count repeated slots individually; a plural two-gun choice costs 20pts.
+const _v24OldUpgradeCost=rosterUpgradeCost;
+rosterUpgradeCost=function(u){
+ let sum=_v24OldUpgradeCost(u);
+ if(u.id==='stormraven'){
+   const all=(u.models||[]).flatMap(m=>[m.ranged,m.ranged2,m.melee,m.melee2,m.weapon].filter(Boolean));
+   // Previous calculation already counted any exact singular Hurricane bolter slot.
+   // Only add missing cost for a bundled two-gun choice.
+   for(const w of all){
+     if(/(?:2\s*x\s*|two\s+|twin\s+)?hurricane bolters/i.test(w))sum+=20;
+   }
+ }
+ return sum;
+};
+const _v18PrevCost=unitCost;
+unitCost=function(r,u){if(r?.faction!=='gk')return _v18PrevCost(r,u);let d=lookup(r,u.id);let table=GK_POINTS_202610[u.id];let base=table?.[u.size]??d?.points?.[u.size];if(base==null)return null;return base+rosterUpgradeCost(u);};
+// Keep totalCost compatible: its original implementation invokes unitCost dynamically.
+const _v24PrevRulePage=rulePage;
+rulePage=function(){
+ const html=_v24PrevRulePage();
+ return `<div class="card" style="margin:10px 0;padding:12px"><b>무장 Upgrade Points 전수 대조 · 2026-10-14 MFM</b><p style="font-size:13px">Psycannon: Brotherhood Terminator / Paladin / Purgation +5pts(개당). Heavy psycannon: Nemesis Dreadknight / Grand Master in Nemesis Dreadknight +15pts. Sublimator: Grand Master in Nemesis Dreadknight +15pts. Hurricane bolter: Stormraven Gunship +10pts(개당, 2개면 +20pts). 그 밖의 무장은 현재 MFM에 별도 무장 비용이 명시되지 않음. 무장 선택 가능 여부는 별도 Datasheet 제한을 따름.</p></div>`+html;
+};
+const _v18PreviousRulePage=rulePage;
+const GK_RULE_GUIDE={
+ warpbane:{headline:'Hallowed Ground',summary:'전장 특정 구역을 Hallowed Ground로 만들고 그 안의 유닛을 강화하는 Detachment.',play:'Objective 주변 위치를 먼저 확보한 뒤 구역 내 Shooting / Fight 보너스와 Stratagem을 활용해.',source:'Faction Pack 및 Codex'},
+ argent:{headline:'Dauntless Champions',summary:'Paladin 중심의 강력한 적 상대 근접전 편성. Paladin의 Wound Roll 조건부 보너스를 활용.',play:'Paladin이 고 Toughness 적을 상대할 때 특히 효과를 확인해.',source:'Faction Pack'},
+ fires:{headline:'Searing Soulflame',summary:'Purgation Squad와 Psychic 화력에 중점을 둔 Detachment.',play:'Purgation의 사격 각도와 Target 선택을 먼저 확인해.',source:'Faction Pack'},
+ immaterial:{headline:'Echojump',summary:'Interceptor가 Shooting 이후 추가 Surge Move로 위치를 바꾸는 기동형 Detachment.',play:'Shooting 뒤 이동 시 Personal Teleporters 사용 제한과 이동 조건을 함께 확인해.',source:'Faction Pack v1.1 Errata'},
+ brotherhood:{headline:'Fury of Titan',summary:'Deep Strike를 활용한 진입과 공격 지원 중심.',play:'Reinforcements로 들어오는 유닛의 공격 타이밍을 계획해.',source:'Codex'},
+ hallowed:{headline:'Duty Before All',summary:'Terminator 중심. Fall Back 이후에도 Shoot와 Charge할 수 있는 능력을 활용.',play:'적에게 묶인 Terminator의 재배치와 Charge를 활용해.',source:'Codex'},
+ augurium:{headline:'Prescient Redeployment',summary:'예지에 기반한 배치 및 공격 지원.',play:'상대 배치와 진입 위치에 따라 선택해.',source:'Codex'},
+ sanctic:{headline:'Mailed Fist',summary:'Vehicle과 Dreadknight를 활용하는 기갑 중심 편성.',play:'Dreadknight와 차량의 Shooting 및 Charge를 조합해.',source:'Codex'},
+ banishers:{headline:'Channelled Force',summary:'Psychic Melee 공격을 중심으로 강화하는 편성.',play:'Fight 직전의 적용 조건과 Leadership Test를 확인해.',source:'Codex'}
+};
+function ruleDetailBlock(d){let g=GK_RULE_GUIDE[d.id];if(!g)return '';return `<div class="card"><h2>Detachment Rule</h2><b>${esc(g.headline)}</b><p class="sub">${esc(g.summary)}</p><div class="details"><b>게임 중 활용</b><p class="sub">${esc(g.play)}</p></div><small>자료 구분: ${esc(g.source)} · 이해를 돕는 요약</small></div>`;}
+rulePage=function(){let r=current(),d=detachments.find(x=>x.id===(r?.detachment||'warpbane'))||detachments[0];let strats=d.strats||[];let content=strats.map(x=>`<div class="card"><details><summary><span>${esc(x.name)}</span><span class="badgecost" style="float:right">${esc(x.cp)} CP</span><div class="muted">${esc(x.phase)}</div><div class="sub">${esc(x.short)}</div></summary><div class="details"><b>사용 Phase</b><p>${esc(x.phase)}</p><b>효과 요약</b><p>${esc(x.detail)}</p><p class="muted">WHEN / TARGET / EFFECT의 정확한 제한은 공식 원문 확인</p></div></details></div>`).join('');return `<div class="warning">11판 참고용 번역 · 2026-10-14 MFM 및 최신 Errata 대조 권장. 검증되지 않은 Stratagem은 실제 게임에서 원문 확인.</div><div class="card"><h2>Detachment</h2><div class="row"><b>${esc(d.name)}</b><span class="badgecost">${esc(d.dp)} DP</span></div><p class="muted">Force Disposition: ${esc(d.disposition)}</p><p class="sub">${esc(d.detail)}</p><button onclick="detachmentSheet()">Detachment 변경</button></div>${ruleDetailBlock(d)}<div class="row"><h2>Stratagems</h2><span class="pill">${strats.length}개 등록</span></div>${content||'<div class="warning">아직 원문 확인된 Stratagem 데이터가 없습니다. 임의로 효과를 추가하지 않았습니다.</div>'}<div class="card"><h2>Army Rule</h2><details><summary>Gate of Infinity</summary><p>적격 GREY KNIGHTS 유닛을 Strategic Reserves로 이동시키는 Army Rule. 적용 시점과 Ingress 조건은 최신 원문 확인.</p></details></div><div class="card"><a href="https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/" target="_blank" rel="noopener">공식 Faction Pack / Errata</a><p><a href="https://mfm.warhammer-community.com/en" target="_blank" rel="noopener">공식 Munitorum Field Manual (Points)</a></p></div>`;};
+// Display pricing basis alongside existing unit cards without changing model editors.
+const _v18PreviousRender=render;
+render=function(updateSheet=true){_v18PreviousRender(updateSheet);if(page==='list'&&current()?.faction==='gk'){$('main')?.insertAdjacentHTML('afterbegin',`<div class="warning"><b>Points 기준: 2026-10-14 MFM 기본 비용</b><div>일부 유닛은 반복 편성 / 선택 옵션에 따른 다른 Points 구간이 존재합니다. 무장별 Upgrade Points는 공식 MFM에서 개별 확인된 것만 추가하며, 미검증 항목을 0pt라고 확정하지 않습니다.</div></div>`);}};
+
+
+/* v19: rules and verified enhancement prices; no speculative weapon surcharge. */
+const GK_ENHANCEMENTS={
+ brotherhood:[['Banishing Wave',20],['Blinding Aura',10],['Purity of Purpose',15],['Tome of Forbidden Ways',25]],
+ hallowed:[['Eye of the Augurium',25],['Inescapable Judgement',20],['Sanctic Reaper',15],['Nemesis Rounds',10]],
+ banishers:[['Sigil of the Hunt',10],['The Ephemeral Tome',15],['The Sixty-sixth Seal',25],['Pyresoul',20]]
+};
+const GK_STRAT_VERIFIED={
+ brotherhood:[
+ ['Truesilver Channelling',2,'Fight','자신의 GREY KNIGHTS INFANTRY 유닛이 Fight하기 전','해당 유닛의 Psychic 무기에 Devastating Wounds 부여'],
+ ['Combat Manifestation',1,'Movement','Deep Strike로 도착하는 GREY KNIGHTS 유닛','적과 수평 6" 초과 거리 배치 가능, 해당 턴 Charge 불가'],
+ ['Purgation Pattern',1,'Shooting','이번 턴 Deep Strike로 배치되어 아직 Shoot하지 않은 유닛','무기에 Sustained Hits 1 부여'],
+ ['Duty Unending',1,'상대 Movement','Engagement Range에 있던 적이 Fall Back한 직후','조건을 충족한 Deep Strike 유닛을 Strategic Reserves로 이동'],
+ ['Shining Veil',1,'상대 Shooting','공격 대상으로 선택된 GREY KNIGHTS 유닛','해당 Phase 동안 Stealth 획득'],
+ ['Expeditious Exit',2,'상대 Fight 종료','GREY KNIGHTS PSYKER INFANTRY 유닛','모든 모델이 Deep Strike를 가지면 Strategic Reserves로 이동']
+ ],
+ hallowed:[
+ ['Giants of the Battlefield',1,'Fight','Fight 전 GREY KNIGHTS TERMINATOR 유닛','해당 Phase Melee 무기 A +1'],
+ ['Unending Fidelity',1,'상대 Shooting / Fight','공격 대상으로 선택된 GREY KNIGHTS INFANTRY 유닛','파괴된 모델이 이번 Phase 공격 전이었다면 D6 4+로 마지막 공격 후 제거'],
+ ['Point-blank Purgation',1,'Shooting','아직 Shoot하지 않은 GREY KNIGHTS INFANTRY 유닛','Storm bolter에 Pistol, Twin-linked 부여'],
+ ['Grind Them Underfoot',1,'Charge','Charge Move를 마친 GREY KNIGHTS TERMINATOR 유닛','Engagement Range 내 모델마다 D6 4+로 Mortal Wound, 최대 6'],
+ ['Precognitive Strategies',1,'상대 Movement','이동 종료한 적의 8" 이내 GREY KNIGHTS INFANTRY 유닛','D6" 이하 Normal Move 가능'],
+ ['Shining Resolve',1,'상대 Shooting','공격 대상으로 선택된 GREY KNIGHTS INFANTRY 유닛','공격 S가 대상 T보다 높으면 Wound Roll -1']
+ ],
+ banishers:[
+ ['Hexwrought Reprisal',1,'Phase 종료','이번 Phase Mortal Wound를 받은 GREY KNIGHTS PSYKER 유닛','가해 적 유닛에 조건부 Mortal Wound 반사, 최대 6'],
+ ['Warding Chant',1,'상대 Shooting / Fight','공격 대상으로 선택된 GREY KNIGHTS PSYKER 유닛','Damage 1 공격에 Feel No Pain 5+']
+ ]
+};
+for(const [id,entries] of Object.entries(GK_STRAT_VERIFIED)){
+ let d=detachments.find(x=>x.id===id);if(!d)continue;
+ d.strats=entries.map(([name,cp,phase,target,effect])=>({name,cp,phase,short:effect,detail:effect,target,verified:true}));
+}
+// Enhancement prices are verified. Wargear upgrade values remain unconfirmed rather than guessed.
+const _v19BaseCost=unitCost;
+unitCost=function(r,u){let base=_v19BaseCost(r,u);if(base==null)return null;
+ let en=GK_ENHANCEMENTS[r?.detachment]||[];
+ let bonus=(u.enhancement&&en.find(x=>x[0]===u.enhancement)?.[1])||0;
+ return base+bonus;
+};
+function selectEnhancement(i,value){let r=current(),u=r?.units?.[i];if(!u)return;u.enhancement=value||'';save();render();editUnit(i);}
+const _v19EditUnit=editUnit;
+editUnit=function(i){_v19EditUnit(i);let r=current(),u=r?.units?.[i];if(!u)return;
+ let isCharacter=(lookup(r,u.id)?.roles||[]).length===1&&u.size===1;
+ // Character eligibility must be confirmed; do not allow enhancements on every unit.
+ let characterIds=['librarian','champ','captain','chaplain','techmarine','gm','voldus','crowe'];
+ if(!characterIds.includes(u.id)||['voldus','crowe'].includes(u.id))return;
+ let en=GK_ENHANCEMENTS[r.detachment]||[];
+ let html='<div class="card"><b>Enhancement Points</b><p class="muted">Character에만 선택. 실제 장착 제한은 공식 원문 확인.</p><select onchange="selectEnhancement('+i+',this.value)"><option value="">없음 (+0pts)</option>'+en.map(x=>'<option value="'+esc(x[0])+'" '+(u.enhancement===x[0]?'selected':'')+'>'+esc(x[0])+' (+'+x[1]+'pts)</option>').join('')+'</select></div>';
+ $('sheetContent')?.insertAdjacentHTML('beforeend',html);
+};
+const _v19RulePage=rulePage;
+rulePage=function(){let r=current(),d=detachments.find(x=>x.id===(r?.detachment||'warpbane'))||detachments[0];
+ let enh=GK_ENHANCEMENTS[d.id]||[];
+ let enHtml='<div class="card"><h2>Enhancements · Points</h2>'+(enh.length?enh.map(x=>'<div class="row"><b>'+esc(x[0])+'</b><span class="badgecost">+'+x[1]+' pts</span></div>').join(''):'<p class="muted">이 Detachment의 Enhancement 비용은 아직 검증되지 않았습니다.</p>')+'</div>';
+ let verified=GK_STRAT_VERIFIED[d.id];
+ let stratHtml=verified?'<div class="card"><h2>Stratagem · 검증된 조건</h2>'+verified.map(x=>'<details><summary><b>'+esc(x[0])+'</b> · '+x[1]+' CP</summary><p><b>WHEN</b> '+esc(x[2])+'</p><p><b>TARGET</b> '+esc(x[3])+'</p><p><b>EFFECT</b> '+esc(x[4])+'</p></details>').join('')+'</div>':'';
+ return _v19RulePage()+enHtml+stratHtml+'<div class="warning">무장별 Upgrade Points는 공식 MFM에서 해당 유닛·무장 조합의 금액을 확인하지 못했습니다. 임의로 +5pts를 부과하지 않습니다. 미확인 Detachment Stratagem은 공식 원문을 확인하세요.</div>';
+};
+
+
+/* v21: Detachment / Stratagem reading layer only. Roster, points and weapons untouched. */
+const GK_RULES_V21={
+ warpbane:{title:'Hallowed Ground',desc:'내 Deployment Zone, 아군 Purifier Squad 6" 이내 등 지정 구역이 Hallowed Ground가 됩니다. Phase 시작 시 No Man’s Land의 Objective Marker 절반 이상을 Control하면 해당 Phase 동안 No Man’s Land도 포함됩니다. 적 Deployment Zone도 해당 구역의 Objective Marker 절반 이상을 Control하면 같은 방식으로 포함됩니다.',effect:'GREY KNIGHTS 모델의 공격은 Hit Roll 1을 re-roll. Purifier Squad이거나 유닛 전체가 Hallowed Ground 안에 있다면 Hit Roll 전체를 re-roll할 수 있습니다.',tip:'Hallowed Ground는 유닛이 완전히 들어왔는지(wholly within) 여부가 중요합니다.',source:'공식 Warpbane Task Force PDF'},
+ brotherhood:{title:'Fury of Titan',desc:'Deep Strike로 배치된 유닛의 공격을 강화하는 기동형 Detachment입니다.',effect:'Deep Strike를 이용한 진입과 Stratagem 연계가 핵심입니다. 정확한 발동 조건은 공식 원문을 확인하세요.',tip:'Deep Strike로 들어온 턴에 적용되는 Stratagem을 먼저 확인하세요.',source:'11판 Grey Knights Faction Pack'},
+ hallowed:{title:'Duty Before All',desc:'GREY KNIGHTS TERMINATOR 중심 Detachment. Fall Back한 턴에도 Shoot와 Charge하는 운용이 가능합니다.',effect:'Terminator의 재진입, 반격, Melee 공격을 지원합니다.',tip:'Fall Back 후 Shoot/Charge 조건과 각 Stratagem의 대상 Keyword를 확인하세요.',source:'11판 Grey Knights Faction Pack'},
+ argent:{title:'Dauntless Champions',desc:'Paladin 중심의 근접 전투 편성입니다.',effect:'Paladin의 Melee 공격과 상대 Toughness에 따른 Wound Roll 보정에 주목하세요.',tip:'Paladin Squad를 주력으로 사용하는 편성에 적합합니다.',source:'규칙 세부 검증 대기'},
+ fires:{title:'Searing Soulflame',desc:'Purgation Squad의 원거리 화력 운용을 강조하는 Detachment입니다.',effect:'공식 원문의 정확한 사격 보정 조건은 추가 검증이 필요합니다.',tip:'무기 Range, Line of Sight와 Shooting Phase를 중심으로 확인하세요.',source:'규칙 세부 검증 대기'},
+ immaterial:{title:'Echojump',desc:'Interceptor Squad의 이동 및 사격 후 재배치를 활용하는 기동형 Detachment입니다.',effect:'Surge Move 등 위치 조정 효과의 발동 조건은 공식 원문을 확인하세요.',tip:'Objective 확보와 상대의 반격 Range에서 벗어나는 이동을 고려하세요.',source:'규칙 세부 검증 대기'},
+ augurium:{title:'Prescient Redeployment',desc:'예지와 재배치를 활용하는 Detachment입니다.',effect:'재배치와 Hit Roll 관련 지원 효과가 중심입니다. 구체적인 발동 조건은 공식 원문 확인이 필요합니다.',tip:'상대 배치와 Reserve 진입 위치를 고려하세요.',source:'규칙 세부 검증 대기'},
+ banishers:{title:'Channelled Force',desc:'Psychic Melee 공격에 집중하는 Detachment입니다.',effect:'Leadership Test 및 공격 Keyword 관련 효과가 있습니다. 세부 조건은 공식 원문을 확인하세요.',tip:'Fight Phase에 발동 가능한 Stratagem을 미리 확인하세요.',source:'규칙 세부 검증 대기'},
+ sanctic:{title:'Mailed Fist',desc:'Vehicle 및 Nemesis Dreadknight 중심의 전투 편성입니다.',effect:'Vehicle과 Dreadknight의 이동, 사격, Charge 연계가 중요합니다. 세부 Rule은 공식 원문 확인이 필요합니다.',tip:'Vehicle Keyword와 Stratagem의 TARGET 조건을 확인하세요.',source:'규칙 세부 검증 대기'}
+};
+const GK_WARPBANE_STRATS_V21=[
+ ['Sanctified Kill Zone',1,'내 Shooting Phase 또는 Fight Phase','Hallowed Ground에 wholly within이며 아직 Shoot/Fight하지 않은 GREY KNIGHTS 유닛','해당 Phase 공격의 Wound Roll 1을 re-roll. Purifier Squad라면 Wound Roll 전체를 re-roll할 수 있습니다.'],
+ ['Flames of Sanctity',1,'Fight Phase 종료','이번 Phase Fight할 자격이 있었던 아군 Purifier Squad','6" 이내 적 유닛마다 D6. 4+이면 D3 Mortal Wounds. Castellan Crowe가 포함되면 주사위 결과에 +1.'],
+ ['Hallowed Beacon',1,'Movement Phase의 Reinforcements Step','이번 Phase Deep Strike로 도착하는 GREY KNIGHTS INFANTRY 유닛 (TERMINATOR 제외)','Hallowed Ground 안에 wholly within으로 배치하고 적 모든 유닛에서 수평 6" 초과 떨어져야 합니다.'],
+ ['Fires of Covenant',1,'상대 Movement Phase 시작','아군 GREY KNIGHTS INFANTRY 유닛','Phase 동안 적 유닛이 6" 이내에 배치되거나 Normal / Advance / Fall Back Move를 마치면 D6. Hallowed Ground에 wholly within이면 +2, 4+이면 D3 Mortal Wounds.'],
+ ['Aegis Eternal',1,'상대 Shooting Phase, 적이 공격 대상을 선택한 직후','공격 대상으로 선택된 아군 GREY KNIGHTS INFANTRY 유닛','Phase 동안 Hallowed Ground에 wholly within인 해당 유닛 모델은 4+ Invulnerable Save를 가집니다.'],
+ ['Repelling Sphere',1,'상대 Charge Phase 시작','아군 GREY KNIGHTS INFANTRY 유닛','Phase 동안 해당 유닛을 대상으로 Charge하면 상대 Charge Roll -1. Hallowed Ground에 wholly within이면 대신 -2.']
+];
+const wb=detachments.find(x=>x.id==='warpbane');
+if(wb)wb.strats=GK_WARPBANE_STRATS_V21.map(([name,cp,phase,target,effect])=>({name,cp,phase,target,short:effect,detail:effect,verified:true}));
+// All nine detachments remain selectable. Only verified stratagem details are treated as authoritative.
+rulePage=function(){
+ const r=current(),d=detachments.find(x=>x.id===(r?.detachment||'warpbane'))||detachments[0],guide=GK_RULES_V21[d.id];
+ const verified=GK_STRAT_VERIFIED[d.id];
+ const rows=d.id==='warpbane'?wb.strats:(verified?verified.map(([name,cp,phase,target,effect])=>({name,cp,phase,target,short:effect,detail:effect,verified:true})):d.strats||[]);
+ const enh=GK_ENHANCEMENTS[d.id]||[];
+ const stratHtml=rows.map(x=>`<div class="card"><details><summary><b>${esc(x.name)}</b> <span class="badgecost" style="float:right">${esc(x.cp)} CP</span><div class="muted">${esc(x.phase)}</div><p class="sub">${esc(x.short||'')}</p></summary><div class="details"><p><b>WHEN</b> · ${esc(x.phase)}</p><p><b>TARGET</b> · ${esc(x.target||'대상 세부 조건 공식 원문 확인')}</p><p><b>EFFECT</b> · ${esc(x.detail||'효과 원문 확인 대기')}</p>${x.verified?'':'<p class="warning">세부 조건 미검증 · 실제 경기 전 공식 원문 확인</p>'}</div></details></div>`).join('');
+ return `<div class="warning">Grey Knights 11판 · 쉬운 한국어 요약. 공식 Errata 및 최신 Faction Pack이 우선합니다.</div>
+ <div class="card"><h2>Detachment</h2><div class="row"><b>${esc(d.name)}</b><span class="badgecost">${esc(d.dp)} DP</span></div><p class="muted">Force Disposition: ${esc(d.disposition)}</p><button onclick="detachmentSheet()">Detachment 변경</button></div>
+ <div class="card"><h2>Detachment Rule</h2><b>${esc(guide.title)}</b><p>${esc(guide.desc)}</p><p><b>게임 효과</b></p><p>${esc(guide.effect)}</p><p class="muted">${esc(guide.tip)}</p><small>${esc(guide.source)}</small></div>
+ <div class="row"><h2>Stratagems</h2><span class="pill">${rows.length}개</span></div>${stratHtml||'<div class="warning">확인된 Stratagem 상세 데이터가 아직 없습니다.</div>'}
+ <div class="card"><h2>Enhancements</h2>${enh.length?enh.map(x=>`<div class="row"><b>${esc(x[0])}</b><span class="badgecost">+${x[1]} pts</span></div>`).join(''):'<p class="muted">이 Detachment의 Enhancement 상세는 검증 대기입니다.</p>'}</div>
+ <div class="card"><h2>Army Rule</h2><details><summary>Gate of Infinity</summary><p>적격 GREY KNIGHTS 유닛을 Strategic Reserves로 이동시키는 Army Rule입니다. 선택 시점과 유닛 수 제한은 최신 Faction Pack을 확인하세요.</p></details></div>
+ <div class="card"><a href="https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/" target="_blank" rel="noopener">공식 Faction Pack / Errata 확인</a></div>`;
+};
+
+
+/* v23: rule-content expansion only; roster, weapon and leader logic unchanged. */
+const GK_V23_DATA = {"rules": {"brotherhood": ["Fury of Titan", "Deep Strike로 배치된 유닛은 해당 턴 공격의 Hit Roll 1과 Wound Roll 1을 re-roll합니다."], "hallowed": ["Duty Before All", "GREY KNIGHTS TERMINATOR 유닛은 Fall Back한 턴에도 Shooting 및 Charge가 가능합니다."], "banishers": ["Channelled Force", "GREY KNIGHTS 유닛이 Fight하기 전에 Leadership Test를 성공하면 해당 Phase 동안 Psychic Melee Weapon에 Sustained Hits 1 또는 Lethal Hits 중 하나를 적용합니다."], "sanctic": ["Mailed Fist", "차량과 Dreadknight 중심의 Detachment입니다. 상세 발동 조건은 공식 원문을 확인하세요."], "augurium": ["Prescient Redeployment", "예지와 재배치 중심 Detachment입니다. 정확한 적용 조건은 공식 원문을 확인하세요."], "warpbane": ["Hallowed Ground", "자신의 Deployment Zone, Purifier Squad 6인치 이내 등은 Hallowed Ground입니다. 해당 구역과 Purifier 조건에 따라 Hit Roll re-roll이 강화됩니다."], "argent": ["Dauntless Champions", "Paladin Squad의 Melee 공격에서 공격 Strength가 대상 Toughness보다 낮은 경우 Wound Roll +1을 적용합니다."], "fires": ["Searing Soulflame", "Purgation Squad의 Righteous Persecution으로 적을 pinned 대상으로 지정할 때 그 적의 Battle-shock Roll에 -1을 적용합니다."], "immaterial": ["Echojump", "Interceptor Squad의 기동 관련 Detachment Rule입니다. Surge Move와 사용 조건은 공식 원문을 확인하세요."]}, "extra": {"sanctic": [["Truesilver Will", 1, "Mortal Wound를 받은 직후", "GREY KNIGHTS PSYKER VEHICLE", "해당 Phase Mortal Wounds에 Feel No Pain 4+."], ["Abominus-class Targets", 1, "Shooting / Fight", "아직 공격하지 않은 GREY KNIGHTS 유닛", "MONSTER 또는 VEHICLE을 공격할 때 Wound Roll +1."], ["Armoured Aegis", 1, "Command", "GREY KNIGHTS PSYKER VEHICLE", "모델 1기의 잃은 Wounds를 최대 3 회복."], ["Redoubled Assault", 1, "Movement, Fall Back 직후", "GREY KNIGHTS VEHICLE", "Fall Back한 턴에도 Shoot 및 Charge 가능."], ["Force Wave", 1, "Movement / Charge", "아직 이동하지 않은 GREY KNIGHTS VEHICLE", "Normal / Advance / Charge Move에서 지형을 수평으로 통과 가능."], ["Argent Wrath", 1, "Charge Move 직후", "GREY KNIGHTS VEHICLE", "3인치 이내 적 유닛은 Battle-shock Test를 하고 결과에 -1."]], "augurium": [["Aggressive Anticipation", 1, "Shooting / Fight", "아직 공격하지 않은 GREY KNIGHTS PSYKER", "Hit Roll을 re-roll 가능."], ["Appointed Hour", 1, "Shooting / Fight", "아직 공격하지 않은 GREY KNIGHTS PSYKER", "수정 전 Hit Roll 5+를 Critical Hit로 처리."], ["Forewarned Evasion", 1, "상대 Shooting / Fight, 대상 선정 직후", "GREY KNIGHTS WALKER", "해당 Phase 자신을 대상으로 하는 공격의 Hit Roll -1."], ["Necessary End", 1, "Fight, 적의 대상 선정 직후", "GREY KNIGHTS INFANTRY", "아직 Fight하지 않은 모델이 파괴될 때 D6가 현재 Battle Round보다 높으면 공격 후 제거."], ["Redirected Strike", 1, "Command 종료", "교전 중이 아닌 GREY KNIGHTS PSYKER", "Deep Strike가 있으면 Strategic Reserves로 이동."], ["Mirage of Echoes", 1, "상대 Reinforcements Step", "새로 배치된 적 12인치 이내의 GREY KNIGHTS PSYKER", "교전 중이 아니고 Deep Strike가 있으면 Strategic Reserves로 이동."]], "argent": [["Truesilver Aegis", 1, "Mortal Wound를 받은 때", "PALADIN SQUAD", "Mortal Wounds에 Feel No Pain 4+."], ["A Threat Ended", 1, "Fight, 선택 시", "PALADIN SQUAD", "Melee Attacks에 Precision 부여."], ["Aura of Vengeance", 1, "Fight, 적이 공격 대상으로 지정 시", "PALADIN SQUAD", "해당 적의 Melee Attacks에 Hazardous 부여."]], "fires": [["Soul-locked", 1, "Movement, Fall Back 선택 시", "PURGATION SQUAD", "Fall Back해도 Shooting 가능."], ["Focused Immolation", 1, "Shooting, 공격 선택 시", "PURGATION SQUAD", "선택한 적 1개를 대상으로 하는 Ranged Attacks에 Devastating Wounds 및 Sustained Hits 1 부여."], ["Spiritsear", 1, "Shooting, 공격 종료 후", "PURGATION SQUAD", "이번 공격에 Hit된 Battle-shocked 적 1개에 D3+1 Mortal Wounds."]], "immaterial": [["Blades from the Beyond", 1, "Fight, Charge한 유닛 선택 시", "INTERCEPTOR SQUAD", "Melee Attacks에 Lance 부여."], ["By Thought Alone", 1, "Shooting, Action 시작 시", "INTERCEPTOR SQUAD", "Action 중에도 Shooting 가능."], ["Responsive Displacement", 1, "상대 Movement, 교전한 적 Fall Back 종료 시", "교전에서 벗어난 INTERCEPTOR SQUAD", "최대 D3+3인치 Normal Move 가능."]]}};
+for(const [id, pair] of Object.entries(GK_V23_DATA.rules)){
+  const d=detachments.find(x=>x.id===id);
+  if(!d)continue;
+  if(typeof GK_RULES_V21!=='undefined' && GK_RULES_V21[id]){
+    GK_RULES_V21[id].title=pair[0];
+    GK_RULES_V21[id].desc=pair[1];
+    GK_RULES_V21[id].effect=pair[1];
+    GK_RULES_V21[id].source='11판 Grey Knights 자료 대조';
+  }
+}
+for(const [id, entries] of Object.entries(GK_V23_DATA.extra)){
+  const d=detachments.find(x=>x.id===id);
+  if(!d)continue;
+  d.strats=entries.map(([name,cp,phase,target,effect])=>({name,cp,phase,target,short:effect,detail:effect,verified:true}));
+}
+const _v23RulePage=rulePage;
+rulePage=function(){
+  let html=_v23RulePage();
+  return html.replace('Grey Knights 11판 · 쉬운 한국어 요약.', 'Grey Knights 11판 · New Recruit 편성 구조를 참고한 쉬운 한국어 요약.');
+};
+
+
+/* v25: 11e New Recruit Dreadknight audit, multi-slot pricing, and optional fixed weapon. */
+MULTI_RANGED.gmdread.choices=['Gatling psilencer','Heavy incinerator','Heavy psycannon','Sublimator'];
+EQUIP.gmdread.base=[...MULTI_RANGED.gmdread.choices];
+EQUIP.gmdread.melee=['Dreadfists','Nemesis daemon greathammer','Nemesis flail','Nemesis greatsword','Nemesis mace'];
+EQUIP.dread.melee=['Dreadfists','Nemesis daemon greathammer','Nemesis greatsword'];
+const V25_PROFILES={
+ 'Sublimator':['18"','2','3+','9','-4','D6','Melta 4, Psychic, Twin-linked','r'],
+ 'Fragstorm grenade launcher':['18"','D6','3+','4','0','1','Blast','r'],
+ 'Nemesis flail':['Melee','10','2+','5','-1','2','Psychic','m'],
+ 'Nemesis mace':['Melee','5','2+','6','-3','3','Anti-Character 2+, Precision, Psychic','m'],
+ 'Nemesis greatsword':['Melee','5','2+','10','-2','D6','Psychic (Strike); Sweep profile: A10, WS2+, S5, AP-1, D1','m'],
+ 'Dreadfists':['Melee','6','2+','6','-1','1','','m'],
+ 'Gatling psilencer':['24"','12','3+','6','0','1','Psychic, Sustained Hits 1','r'],
+ 'Heavy psycannon':['24"','6','3+','10','-2','3','Ignores Cover, Psychic','r']
+};
+for(const [name,a] of Object.entries(V25_PROFILES))weapons[name]={en:name,range:a[0],a:a[1],skill:a[2],s:a[3],ap:a[4],d:a[5],keywords:a[6],kind:a[7]};
+const _v25Sync=syncUnit;
+syncUnit=function(u){_v25Sync(u);if(u.id==='gmdread'){for(const m of u.models){if(typeof m.fragstorm!=='boolean')m.fragstorm=false;}}return u;};
+// The original slot editor compacts selected values, so a change in slot 2 must be
+// reflected in BOTH the stored slot list and the total cost, regardless of slot index.
+const _v25ChangeRanged=changeRangedSlot;
+changeRangedSlot=function(i,j,slot,value){_v25ChangeRanged(i,j,slot,value);save();render(false);};
+const _v25ModelRows=modelRows;
+modelRows=function(i){let html=_v25ModelRows(i);const u=current()?.units[i];if(u?.id!=='gmdread')return html;
+ // One Grand Master Dreadknight model per unit. Append an independent optional weapon.
+ const m=syncUnit(u).models[0];
+ const block=`<div class="card" style="padding:12px"><label><input type="checkbox" ${m.fragstorm?'checked':''} onchange="toggleGmFragstorm(${i},this.checked)"> Fragstorm grenade launcher (선택, 0pts)</label><p class="muted">기본 Ranged Weapons 최대 2개와 별도로 장착 가능한 옵션</p></div>`;
+ return html+block;
+};
+function toggleGmFragstorm(i,on){let u=syncUnit(current().units[i]);if(u.id!=='gmdread')return;u.models[0].fragstorm=!!on;save();rerenderEditor(i);}
+const _v25SelectedWeapons=selectedWeapons;
+selectedWeapons=function(u,kind){const rows=_v25SelectedWeapons(u,kind);if(kind==='r'&&u.id==='gmdread'&&u.models?.[0]?.fragstorm)rows.push(['Fragstorm grenade launcher',1,weapons['Fragstorm grenade launcher']]);return rows;};
+const _v25ModelWeaponInfo=modelWeaponInfo;
+modelWeaponInfo=function(i,j){const u=syncUnit(current().units[i]);if(u.id!=='gmdread')return _v25ModelWeaponInfo(i,j);
+ const m=u.models[j],ranged=(m.rangedSlots||[]).map(w=>[w,1,weapons[w]]);
+ if(m.fragstorm)ranged.push(['Fragstorm grenade launcher',1,weapons['Fragstorm grenade launcher']]);
+ const melee=m.melee&&weapons[m.melee]?[[m.melee,1,weapons[m.melee]]]:[];
+ openSheet(`<div class="row"><h2>Grand Master · 무장 Stats</h2><button onclick="editUnit(${i})">뒤로</button></div><h3>Ranged Weapons</h3>${weaponTable(ranged)}<h3>Melee Weapons</h3>${weaponTable(melee,true)}`);
+};
+// Recompute from actual selected weapons, not only m.ranged (slot 1).
+// This also handles legacy rosters with m.rangedSlots and per-model Psycannons.
+rosterUpgradeCost=function(u){
+ let sum=0;syncUnit(u);
+ for(const m of u.models||[]){
+   const cfg=MULTI_RANGED[u.id];
+   const ranged=cfg?(m.rangedSlots||[]):[m.ranged];
+   for(const w of [...ranged,m.melee].filter(Boolean)){
+     const price=UPGRADE_POINTS_202610[u.id+'|'+w]??UPGRADE_POINTS_202610[u.id+'|'+m.role+'|'+w];
+     if(Number.isFinite(price))sum+=price;
+   }
+   if(u.id==='stormraven'){
+     // A paired Hurricane bolter entry is two separately priced weapons.
+     for(const w of ranged)if(/^(?:2x|two) hurricane bolters$/i.test(w))sum+=20;
+   }
+ }
+ return sum;
+};
+// Remove accidental double counting when m.ranged mirrors m.rangedSlots[0].
+const _v25LeaderRows=v12WeaponRows;
+v12WeaponRows=function(u,kind){
+ if(kind!=='r'||!MULTI_RANGED[u.id])return _v25LeaderRows(u,kind);
+ return selectedWeapons(u,'r');
+};
+// Normalize previously saved units; preserve both selected weapons.
+for(const r of rosters)for(const u of r.units||[])if(MULTI_RANGED[u.id])syncUnit(u);
+save();
+
+
+/* v26 Unit Ability audit. Display content only; no roster mechanics changed. */
+const V26_ABILITY_FIX={
+ interceptor:[['Personal Teleporters','Shooting 후 최대 6" Normal Move · 이후 Charge 불가','자신의 Shooting phase에 이 유닛이 Shooting을 마친 직후, 적의 Engagement Range 안에 있지 않다면 Movement phase처럼 최대 6" Normal Move할 수 있습니다. 사용하면 그 턴에는 Charge를 선언할 수 없습니다.']],
+ purgation:[['Righteous Persecution','Shooting 후 Hit한 적 Infantry 등에 Pin 적용','자신의 Shooting phase에 이 유닛이 Shooting을 마친 뒤, 해당 공격으로 Hit한 적 유닛 1개(MONSTER 및 VEHICLE 제외)를 선택합니다. 다음 자신의 턴 시작까지 그 적은 pinned 상태가 되며, Move 특성 -2" 및 Charge Roll -2를 적용합니다.']],
+ librarian:[['Sanctic Hood','Leader일 때 Psychic Attacks에 Feel No Pain 4+','이 모델이 유닛을 이끌고 있는 동안 해당 유닛의 모델은 Psychic Attacks에 대해 Feel No Pain 4+를 가집니다.'],['Haloed in Soulfire (Psychic)','Leader 유닛은 18" 이내에서만 Ranged Attack 대상으로 지정 가능','이 모델이 유닛을 이끄는 동안 공격 모델이 18" 이내에 있지 않으면 해당 유닛을 Ranged Attack 대상으로 선택할 수 없습니다.']],
+ grandmaster:[['Warrior Strategist','Battle Round마다 한 번 Stratagem CP -1','Battle Round마다 한 번, 이 Ability가 있는 아군 모델 1기는 자신의 유닛이 Stratagem 대상이 되었을 때 해당 Stratagem 사용 비용을 1CP 줄일 수 있습니다.'],['Might of Titan (Psychic)','Battle당 1회 Fight phase에 본인 Melee A/S +3','Battle당 한 번, Fight phase 시작 시 사용하면 해당 Phase 동안 이 모델의 Melee Weapons A 및 S 특성이 각각 +3 됩니다.']],
+ champ:[['Clarion of Haste (Psychic)','Leader 유닛은 Advance한 턴에도 Charge 가능','이 모델이 유닛을 이끄는 동안 그 유닛은 Advance한 턴에도 Charge를 선언할 수 있습니다.'],['Inspiring Exemplar','적 CHARACTER 처치 시 CP +1 및 본인 Melee A +1','이 모델이 Fight phase에서 적 CHARACTER 모델을 파괴할 때마다 1CP를 얻고, Battle 종료까지 자신의 Nemesis force weapon A +1을 적용합니다.']],
+ chaplain:[['Zealous Path','Leader 유닛 Charge Roll 재굴림','이 모델이 유닛을 이끄는 동안 해당 유닛의 Charge Roll을 재굴림할 수 있습니다.'],['Litanies of Sanctity','Battle당 1회 Battle-shock 해제','Battle당 한 번, Phase 시작 시 이 모델로부터 12" 이내의 Battle-shocked 아군 GREY KNIGHTS 유닛 1개를 선택하여 Battle-shocked 상태를 해제합니다.']],
+ gmdread:[['Surge of Wrath (Psychic)','MONSTER/VEHICLE Melee 공격에서 Hit/Wound/Damage 재굴림','이 모델이 MONSTER 또는 VEHICLE 유닛을 대상으로 Melee Attack할 때 Hit Roll, Wound Roll, Damage Roll을 각각 재굴림할 수 있습니다.'],['Warrior Strategist','Battle Round마다 한 번 Stratagem CP -1','Battle Round마다 한 번, 이 Ability가 있는 아군 모델 1기는 자신의 유닛이 Stratagem 대상이 되었을 때 해당 Stratagem 사용 비용을 1CP 줄일 수 있습니다.']]
+};
+for(const [id,items] of Object.entries(V26_ABILITY_FIX)){
+ const d=catalog.gk.find(x=>x.id===id);if(!d)continue;
+ const keep=(d.abilities||[]).filter(a=>!items.some(z=>z[0]===a.name));
+ d.abilities=[...keep,...items.map(([name,short,detail])=>({name,short,detail}))];
+}
+// Core/Army rules are displayed separately to avoid silently hiding them.
+const _v26AbilityCards=abilityCards;
+abilityCards=function(r,u,d){
+ let result=_v26AbilityCards(r,u,d);
+ if(r?.faction!=='gk')return result;
+ const vehicleNoDeep=['landraider','redeemer','crusader','rhino','razorback','ven'];
+ const core=vehicleNoDeep.includes(u.id)?[]:['Deep Strike'];
+ if(['champ','chaplain','librarian','crowe','grandmaster','voldus','draigo','brothercaptain'].includes(u.id))core.push('Leader');
+ if(['dread','gmdread'].includes(u.id))core.push('Deadly Demise D3');
+ if(u.id==='strike')core.push('Scouts 6"');
+ const note=`<div class="card"><h3>Core / Army Rules</h3><p><b>Army:</b> Gate of Infinity</p><p><b>Core:</b> ${core.length?core.map(esc).join(' · '):'별도 Core Ability 확인 필요'}</p><p class="muted">Army Rule 및 Core Ability는 유닛의 고유 Ability와 별도로 표시합니다. 정확한 발동 조건은 해당 Rule을 확인하세요.</p></div>`;
+ return note+result;
+};
+
+
+/* v27: all-catalog ability coverage audit; preserve existing roster mechanics. */
+const V27_VERIFIED={
+ voldus:[['Sanctuary (Psychic)','Stealth 및 적 Melee Hit Roll -1','이 유닛은 Stealth를 갖습니다. 이 유닛을 대상으로 하는 Melee Attack의 Hit Roll에 -1을 적용합니다.'],['Hammer Aflame (Psychic)','Fight 선택 시 적에게 Mortal Wounds','이 모델의 유닛이 Fight하도록 선택될 때 Engagement Range 내 적 유닛 하나를 지정해 D6를 굴립니다. 2-3: 1 Mortal Wound, 4-5: D3 Mortal Wounds, 6+: D3+3 Mortal Wounds.']],
+};
+for(const [id,entries] of Object.entries(V27_VERIFIED)){
+ const d=catalog.gk.find(x=>x.id===id);if(!d)continue;
+ for(const [name,short,detail] of entries){const at=d.abilities.findIndex(a=>a.name===name);const a={name,short,detail};if(at>=0)d.abilities[at]=a;else d.abilities.push(a);}
+}
+const V27_PENDING_WORDS=/검증 대기|공식 (?:Datasheet|원문) 확인|세부 조건|확인 필요|일부 확인/;
+const _v27PrevAbilityCards=abilityCards;
+abilityCards=function(r,u,d){
+ let html=_v27PrevAbilityCards(r,u,d);
+ if(r?.faction!=='gk')return html;
+ const a=d.abilities||[];
+ const pending=a.filter(x=>V27_PENDING_WORDS.test((x.short||'')+' '+(x.detail||'')));
+ if(!a.length||pending.length){
+   html+=`<div class="card" style="border-left:4px solid #b26a00"><b>Ability 전수검사: 추가 확인 필요</b><p class="sub">${!a.length?'고유 Ability 데이터가 등록되지 않았습니다.':`등록된 ${a.length}개 중 ${pending.length}개는 설명이 미완성입니다.`} New Recruit의 해당 Datasheet와 비교 후 사용하세요.</p></div>`;
+ }
+ return html;
+};
+const _v27PrevRulePage=rulePage;
+rulePage=function(){
+ const entries=catalog.gk.map(d=>({id:d.id,name:d.en,total:(d.abilities||[]).length,pending:(d.abilities||[]).filter(x=>V27_PENDING_WORDS.test((x.short||'')+' '+(x.detail||''))).length}));
+ const missing=entries.filter(x=>x.total===0), partial=entries.filter(x=>x.total>0&&x.pending>0);
+ const body=`<div class="card"><h3>Grey Knights Unit Ability 전수검사 · v27</h3><p>앱 등록 유닛 ${entries.length}종 / Ability 미등록 ${missing.length}종 / 설명 미완성 ${partial.length}종. 이 수치는 앱 내부 데이터의 완성도 검사이며, 모든 공식 Ability의 정확성을 인증하는 결과가 아닙니다.</p><details><summary><b>유닛별 검사 결과 보기</b></summary><div style="max-height:320px;overflow:auto">${entries.map(x=>`<div style="padding:7px;border-bottom:1px solid #ddd"><b>${esc(x.name)}</b><div class="sub">${x.total===0?'고유 Ability 미등록':x.pending?'일부 설명 미완성':'등록 설명 있음 · 공식 대조 필요'} · 등록 ${x.total}개${x.pending?' / 미완성 '+x.pending+'개':''}</div></div>`).join('')}</div></details><p class="sub">검증 기준: New Recruit 11th-edition Grey Knights. 확인되지 않은 Ability는 추측으로 채우지 않았습니다.</p></div>`;
+ return body+_v27PrevRulePage();
+};
+
+
+/* v28: offline, read-only New Recruit text roster comparison. */
+function nr28Norm(v){return String(v||'').toLowerCase().replace(/[^a-z0-9]/g,'');}
+function nr28Parse(t){
+ const out=[], ignored=[], lines=String(t||'').split(/\r?\n/);
+ const known=(catalog.gk||[]).concat(catalog.dg||[]);
+ const names=new Map(known.map(d=>[nr28Norm(d.en),d.en]));
+ const aliases={'grandmasterinnemesisdreadknight':'Grand Master in Nemesis Dreadknight'};
+ for(let i=0;i<lines.length;i++){
+  const line=lines[i].trim();
+  if(!line)continue;
+  let m=line.match(/^(?:[-*•]\s*)?(?:(\d+)\s*[x×]\s*)?(.+?)\s*\(([\d,]+)\s*(?:pts?|points?)\)/i);
+  if(!m)m=line.match(/^(?:[-*•]\s*)?(?:(\d+)\s*[x×]\s*)?(.+?)\s*[-–:]\s*([\d,]+)\s*(?:pts?|points?)\s*$/i);
+  if(!m)continue;
+  const name=m[2].replace(/^\d+\s*x\s*/i,'').replace(/\s+\[[^\]]+\]$/,'').trim();
+  const key=nr28Norm(name);
+  if(/^(unnamedlist|strikeforce|incursion|onslaught|combatpatrol|army|roster|total|battle|enhancement|detachment|faction)/i.test(key)){ignored.push({name,line:i+1,reason:'로스터 정보'});continue;}
+  const canon=names.get(key)||aliases[key];
+  if(!canon){ignored.push({name,line:i+1,reason:'등록 유닛명 아님'});continue;}
+  out.push({name:canon,points:+m[3].replace(/,/g,''),line:i+1,quantity:+(m[1]||1)});
+ }
+ return {entries:out,ignored};
+}
+function nr28Compare(){
+ const r=current(),box=document.getElementById('nr28result'),t=document.getElementById('nr28input')?.value||'';
+ if(!box)return;
+ if(!r){box.innerHTML='<p class="warning">먼저 로스터를 선택하세요.</p>';return;}
+ const parsed=nr28Parse(t),entries=parsed.entries;
+ if(!entries.length){box.innerHTML='<p class="warning">Points가 포함된 유닛 행을 인식하지 못했습니다. New Recruit에서 GW 또는 Tournament 형식으로 내보낸 전체 텍스트를 붙여넣어 주세요.</p>';return;}
+ const ours=r.units.map((u,i)=>{const d=lookup(r,u.id);return {i,name:d?.en||u.id,points:unitCost(r,u),size:u.size,u};});
+ const used=new Set(),results=[],unmatched=[];
+ for(const e of entries){
+  let opts=ours.filter(x=>!used.has(x.i)&&nr28Norm(x.name)===nr28Norm(e.name));
+  if(!opts.length){unmatched.push(e);continue;}
+  const best=opts.find(x=>x.points===e.points)||opts[0];
+  used.add(best.i);results.push({e,best,status:best.points===null?'unknown':best.points===e.points?'match':'diff'});
+ }
+ const missing=ours.filter(x=>!used.has(x.i));
+ const match=results.filter(x=>x.status==='match').length,diff=results.filter(x=>x.status==='diff').length;
+ const row=x=>`<div style="padding:9px 0;border-bottom:1px solid #ddd"><b>${esc(x.e.name)}</b><div class="sub">New Recruit ${x.e.points}pts / Fresh ${x.best.points??'미확인'}pts · ${x.status==='match'?'✓ 일치':x.status==='diff'?'⚠ '+(x.best.points-x.e.points)+'pts 차이':'? 확인 필요'}</div></div>`;
+ box.innerHTML=`<div class="card"><b>비교 결과 · ${match}개 일치 / ${diff}개 차이</b><p class="sub">New Recruit 유닛 ${entries.length}개 · Fresh ${ours.length}유닛 · 대응 유닛 없음 ${unmatched.length}개 · 비유닛 행 제외 ${parsed.ignored.length}개</p>${results.map(row).join('')}${unmatched.length?`<h3>Fresh 로스터에 없는 New Recruit 유닛</h3>${unmatched.map(x=>`<p class="sub">${esc(x.name)} (${x.points}pts, ${x.line}행)</p>`).join('')}`:''}${missing.length?`<h3>Fresh에서 대응 유닛을 찾지 못함</h3>${missing.map(x=>`<p class="sub">${esc(x.name)} (${x.points??'?'}pts)</p>`).join('')}`:''}<p class="sub">로스터 제목·게임 크기·비유닛 항목은 비교에서 제외합니다. 같은 이름의 유닛은 Points가 일치하는 항목부터 1:1 매칭합니다. 현재는 Unit Points 비교이며 Wargear·Leader·Ability의 자동 대조는 지원하지 않습니다. New Recruit 내보내기에서 Enhancement 비용이 별도 행으로 표시되면 수동 확인하세요.</p></div>`;
+}
+const _nr28PrevRulePage=rulePage;
+rulePage=function(){
+ const old=_nr28PrevRulePage();
+ return `<div class="card"><h2>New Recruit 로스터 비교 (Beta)</h2><p class="sub">New Recruit → Export / Share → GW 또는 Tournament 텍스트를 복사해서 붙여넣으세요. 현재 선택한 Fresh 로스터와 Unit별 Points를 오프라인에서 비교합니다. 저장된 로스터는 변경하지 않습니다.</p><textarea id="nr28input" rows="7" placeholder="예: 1x Grand Master in Nemesis Dreadknight (240 pts)" style="width:100%;box-sizing:border-box"></textarea><button class="primary" onclick="nr28Compare()">Points 비교 실행</button><div id="nr28result"></div></div>`+old;
+};
+
+</script>
+<style>.boosted{color:#c62828!important;font-weight:900}.ability-chip{background:#fff0f0;border-left:3px solid #c62828;padding:9px;margin:7px 0;border-radius:5px}.leaderline{padding:8px;background:#edf5ff;border-radius:9px;margin:8px 0}.stat b.boosted{color:#c62828!important}.small-table{width:100%;border-collapse:collapse;font-size:12px}.small-table td,.small-table th{padding:7px 4px;border-bottom:1px solid #ddd;text-align:left}</style>
+
+</body></html>
